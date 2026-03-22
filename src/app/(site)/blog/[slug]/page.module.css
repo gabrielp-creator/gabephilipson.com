@@ -1,0 +1,112 @@
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 13px;
+  color: var(--color-light);
+  font-family: var(--font-abel), 'Abel', sans-serif;
+  margin-top: -0.5rem;
+}
+
+.body {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--color-body);
+  margin-bottom: 1.5rem;
+}
+
+.body a {
+  color: var(--color-primary-medium);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--color-primary-light);
+}
+
+.body a:hover {
+  border-bottom-color: var(--color-primary-medium);
+}
+
+.pull {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 18px;
+  color: var(--color-primary);
+  line-height: 1.5;
+  border-left: 3px solid var(--color-primary-lightest);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  max-width: 580px;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--color-divider);
+  margin: 2.5rem 0;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+}
+
+.authorAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 14px;
+  color: var(--color-primary-lightest);
+  flex-shrink: 0;
+}
+
+.authorName {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 13px;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.authorBio {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.cta {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--color-divider);
+  margin-bottom: 3rem;
+}
+
+.ctaLabel {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-abel), 'Abel', sans-serif;
+}
+
+.ctaTitle {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 16px;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.ctaBody {
+  font-size: 15px;
+  color: var(--color-body);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  max-width: 520px;
+}

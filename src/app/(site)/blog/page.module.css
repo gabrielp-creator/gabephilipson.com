@@ -1,0 +1,46 @@
+.list {
+  margin-bottom: 3rem;
+}
+
+.card {
+  border: 0.5px solid var(--color-divider);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s;
+  display: block;
+}
+
+.card:hover {
+  border-color: var(--color-primary-light);
+}
+
+.cardTitle {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 16px;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.cardMeta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 13px;
+  color: var(--color-light);
+  margin-bottom: 0.75rem;
+}
+
+.cardExcerpt {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-body);
+  max-width: 640px;
+}
+
+.readMore {
+  font-size: 13px;
+  color: var(--color-primary-medium);
+  margin-top: 0.75rem;
+  display: inline-block;
+}
