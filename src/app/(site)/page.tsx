@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionLabel from '@/components/SectionLabel/SectionLabel';
 import Button from '@/components/Button/Button';
 import StatsCarousel from '@/components/StatsCarousel/StatsCarousel';
@@ -46,7 +47,7 @@ export default function HomePage() {
       <section className={styles.section}>
         <SectionLabel>AI / POC Lab</SectionLabel>
         <h2 className={styles.sectionTitle}>Not just aware of AI. Using it.</h2>
-        <p className={styles.body}>The AI/POC Lab documents what I&apos;ve actually built — working systems, not opinions about what AI can do. A job search agent managing 60+ applications across 50+ sessions. A college decision tool built for a real family navigating 12 schools. A full-stack ecommerce platform built with Claude Code from the ground up. More in progress.</p>
+        <p className={styles.body}>The AI/POC Lab documents what I&apos;ve actually built — working systems, not opinions about what AI can do. A job search agent that tracks an active pipeline of applications across multiple platforms. A college decision tool built for a real family navigating 12 schools. A full-stack ecommerce platform built with Claude Code from the ground up. More in progress.</p>
         <div style={{ marginBottom: '1.25rem' }}>
           {aiTags.map((tag) => (
             <span className={styles.tag} key={tag}>{tag}</span>
@@ -57,9 +58,16 @@ export default function HomePage() {
 
       <section className={styles.section}>
         <SectionLabel>About</SectionLabel>
-        <h2 className={styles.sectionTitle}>Senior operator. Still gets his hands dirty.</h2>
-        <p className={styles.body}>Started as a systems analyst. Spent 18 years at Harry Winston, including a decade where the business grew from $60M to $250M in annual revenue, and built the technology infrastructure that made that scale possible. Ran consulting engagements at Cognizant. Founded IES in 2019. I build and lead teams, manage onshore and offshore delivery, and partner with C-suite stakeholders. NYU Stern MBA. Based in Brooklyn.</p>
-        <Button href="/about" variant="secondary">Full Background</Button>
+        <div className={styles.aboutRow}>
+          <div>
+            <h2 className={styles.sectionTitle}>Senior operator. Still gets his hands dirty.</h2>
+            <p className={styles.body}>Started as a systems analyst. Spent 18 years at Harry Winston, including a decade where the business grew from $60M to $250M in annual revenue, and built the technology infrastructure that made that scale possible. Ran consulting engagements at Cognizant. Founded IES in 2019. I build and lead teams, manage onshore and offshore delivery, and partner with C-suite stakeholders. NYU Stern MBA. Based in Brooklyn.</p>
+            <Button href="/about" variant="secondary">Full Background</Button>
+          </div>
+          <div className={styles.aboutPhoto}>
+            <Image src="/headshot.png" alt="Gabriel Philipson" width={120} height={120} />
+          </div>
+        </div>
       </section>
 
       <section className={styles.section}>

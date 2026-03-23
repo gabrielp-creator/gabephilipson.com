@@ -1,15 +1,42 @@
 .footer {
   border-top: 0.5px solid var(--color-divider);
-  padding: 1.5rem 0;
+  padding: 2rem 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.navLink {
+  font-size: 12px;
+  font-family: var(--font-abel), 'Abel', sans-serif;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--color-primary-medium);
+}
+
+.bottom {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   color: var(--color-light);
-  margin-top: 1rem;
 }
 
 @media (max-width: 480px) {
-  .footer {
+  .nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .bottom {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;

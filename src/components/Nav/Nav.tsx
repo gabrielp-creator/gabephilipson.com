@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -20,7 +21,9 @@ export default function Nav() {
 
   return (
     <nav className={styles.nav}>
-      <Link href="/" className={styles.logo}>IES</Link>
+      <Link href="/" className={styles.logo}>
+          <Image src="/ies-logo.png" alt="IES Consulting Group" width={120} height={50} priority />
+        </Link>
       <button
         className={styles.menuButton}
         onClick={() => setMenuOpen(!menuOpen)}

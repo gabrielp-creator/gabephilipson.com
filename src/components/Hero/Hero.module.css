@@ -1,7 +1,32 @@
 .hero {
-  padding: 3rem 0 2.5rem;
+  padding: 0.25rem 0 2.5rem;
   border-bottom: 0.5px solid var(--color-divider);
   margin-bottom: 3rem;
+}
+
+.heroWithPhoto {
+  padding: 0.25rem 0 2.5rem;
+  border-bottom: 0.5px solid var(--color-divider);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.heroContent {
+  flex: 1;
+}
+
+.headshot {
+  flex-shrink: 0;
+}
+
+.headshot img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary-lightest);
 }
 
 .eyebrow {
@@ -27,4 +52,22 @@
   line-height: 1.75;
   color: var(--color-body);
   max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .heroWithPhoto {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .headshot img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .intro {
+    text-align: left;
+  }
 }

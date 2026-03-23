@@ -48,6 +48,7 @@ export default function AboutPage() {
         eyebrow="About"
         headline="Some Executives Manage the Work. I've Always Done Both."
         intro="I started as a systems analyst and spent the next 25 years getting closer to the hard problems, not further away. ERP implementations, financial system splits, supply chain overhauls, platform modernization. The work that takes years to get right and costs real money when it doesn't. That's where I've spent my career, and it's what I bring to every engagement."
+        headshot="/headshot.png"
       />
 
       <section className={styles.section}>
@@ -92,7 +93,7 @@ export default function AboutPage() {
       <section className={styles.section}>
         <SectionLabel>Outside of work</SectionLabel>
         <h2 className={styles.sectionTitle}>Brooklyn. Photography. Woodworking.</h2>
-        <p className={styles.body}>I&apos;ve lived in Brooklyn for years and have no plans to leave. Outside of work I shoot photography, mostly concerts, mostly from 15 to 20 years ago when getting close to the stage was easier than it is now. I&apos;ve also been teaching myself woodworking, which turns out to have a lot in common with software: measure twice, cut once, and the joints either fit or they don&apos;t. Both are in the Hobbies section if you want to see the work.</p>
+        <p className={styles.body}>I&apos;ve lived in Brooklyn for years and have no plans to leave. Outside of work I shoot photography, mostly concerts, mostly from 15 to 20 years ago when getting close to the stage was easier than it is now. I&apos;ve also been teaching myself woodworking, which turns out to have a lot in common with software: measure twice, cut once, and the joints either fit or they don&apos;t.</p>
       </section>
 
       <div className={styles.ctas}>

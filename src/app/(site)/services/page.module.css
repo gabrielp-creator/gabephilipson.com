@@ -29,7 +29,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 18px;
+  font-size: 11px;
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font-weight: 400;
 }
 
 .cardTitle {

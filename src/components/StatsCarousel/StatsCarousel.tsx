@@ -49,9 +49,11 @@ const sets = [
 export default function StatsCarousel() {
   const [current, setCurrent] = useState(0);
   const [opacity, setOpacity] = useState(1);
+  const [progress, setProgress] = useState(0);
 
   const goTo = useCallback((i: number) => {
     setOpacity(0);
+    setProgress(0);
     setTimeout(() => {
       setCurrent(i);
       setOpacity(1);
@@ -64,11 +66,17 @@ export default function StatsCarousel() {
 
   useEffect(() => {
     const interval = setInterval(next, 5000);
-    return () => clearInterval(interval);
+    const progressInterval = setInterval(() => {
+      setProgress((p) => Math.min(p + 2, 100));
+    }, 100);
+    return () => { clearInterval(interval); clearInterval(progressInterval); };
   }, [next]);
 
   return (
     <>
+      <div className={styles.progressBar}>
+        <div className={styles.progressFill} style={{ width: `${progress}%` }} />
+      </div>
       <div className={styles.grid} style={{ opacity }}>
         {sets[current].stats.map((s) => (
           <div className={styles.card} key={s.num}>

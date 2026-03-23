@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: '\u2699',
+    icon: 'ERP',
     color: '#005C8F',
     title: 'ERP Strategy and Implementation',
     tagline: 'The right system, implemented correctly.',
@@ -24,7 +24,7 @@ const services = [
     audience: 'Mid-market companies evaluating, replacing, or upgrading their ERP. Companies on aging NAV installations considering a move to Business Central. Organizations that have had a failed or stalled ERP project.',
   },
   {
-    icon: '\uD83D\uDD17',
+    icon: 'INT',
     color: '#1C75BC',
     title: 'Custom Integrations',
     tagline: 'Connect the systems that run your business.',
@@ -32,7 +32,7 @@ const services = [
     audience: 'Companies running disconnected systems that require manual data entry or reconciliation between platforms. Common use cases: ERP to Salesforce, bank integrations, payment automation, ecommerce to ERP sync.',
   },
   {
-    icon: '\uD83D\uDE80',
+    icon: 'MOD',
     color: '#0B4F6C',
     title: 'Platform Modernization',
     tagline: 'Modernize without starting over.',
@@ -40,7 +40,7 @@ const services = [
     audience: 'Companies running on outdated ERP or platform versions that are limiting growth or creating compliance risk. Organizations that want a modernization roadmap before committing to a full replacement.',
   },
   {
-    icon: '\uD83D\uDCC8',
+    icon: 'DX',
     color: '#37A3D8',
     title: 'Digital Transformation',
     tagline: 'Technology that changes how the business operates.',
@@ -48,7 +48,7 @@ const services = [
     audience: 'Mid-market companies looking to reduce operational overhead, improve data visibility, or build systems that scale. Particularly relevant for finance, operations, and supply chain functions.',
   },
   {
-    icon: '\uD83C\uDF10',
+    icon: 'OFF',
     color: '#5FA6DB',
     title: 'Offshore Delivery',
     tagline: 'Execution capacity without the overhead.',
@@ -56,8 +56,8 @@ const services = [
     audience: 'Companies that need custom development, ERP configuration, or integration work but don\u2019t have the internal capacity or headcount budget to staff it themselves.',
   },
   {
-    icon: '\uD83E\uDDE0',
-    color: '#CCEAFC',
+    icon: 'AI',
+    color: '#005C8F',
     title: 'AI Strategy and Implementation',
     tagline: 'From AI awareness to AI in production.',
     desc: 'Most organizations are paying attention to AI. Fewer have figured out how to actually deploy it in a way that changes how work gets done. IES helps mid-market companies move from evaluation to execution, identifying where AI creates real operational leverage, building proof-of-concept systems, and implementing tools that work in the context of existing platforms and workflows.',
@@ -81,7 +81,7 @@ export default function ServicesPage() {
           <div className={styles.card} key={svc.title}>
             <div className={styles.cardHeader}>
               <div className={styles.icon} style={{ background: svc.color }}>
-                <span role="img">{svc.icon}</span>
+                <span>{svc.icon}</span>
               </div>
               <div>
                 <div className={styles.cardTitle}>{svc.title}</div>

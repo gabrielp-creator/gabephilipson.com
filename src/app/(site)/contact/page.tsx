@@ -29,7 +29,7 @@ export default function ContactPage() {
           <SectionLabel>Schedule a call</SectionLabel>
           <h2 className={styles.sectionTitle}>20-Minute Intro Call</h2>
           <p className={styles.text}>Pick a time that works for you. No prep required. We&apos;ll figure out quickly whether there&apos;s a reason to talk further.</p>
-          <Button href="/contact">Schedule on Calendly</Button>
+          <Button href="https://calendly.com/gabephilipson">Schedule on Calendly</Button>
 
           <hr className={styles.divider} />
 

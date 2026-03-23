@@ -86,7 +86,30 @@
   letter-spacing: 0.04em;
 }
 
+.aboutRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.aboutPhoto img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary-lightest);
+  flex-shrink: 0;
+}
+
 .formSection {
   margin-top: 1.5rem;
   max-width: 480px;
+}
+
+@media (max-width: 768px) {
+  .aboutRow {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+  }
 }
