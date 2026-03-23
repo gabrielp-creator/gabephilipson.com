@@ -44,6 +44,14 @@ const sets = [
       { num: '10', desc: 'Offshore team members coordinated across active client engagements' },
     ],
   },
+  {
+    name: 'This site',
+    stats: [
+      { num: '22 hrs', desc: 'Concept to live URL \u2014 strategy, copy, build, and deployment' },
+      { num: '$0', desc: 'Build cost for a custom 7-page production site (excl. $6/mo hosting)' },
+      { num: '$15K\u2013$30K', desc: 'Equivalent agency cost avoided' },
+    ],
+  },
 ];
 
 export default function StatsCarousel() {
