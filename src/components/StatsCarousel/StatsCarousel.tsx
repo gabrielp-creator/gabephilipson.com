@@ -5,6 +5,14 @@ import styles from './StatsCarousel.module.css';
 
 const sets = [
   {
+    name: 'This site',
+    stats: [
+      { num: '22 hrs', desc: 'Concept to live URL \u2014 strategy, copy, build, and deployment' },
+      { num: '$0', desc: 'Build cost for a custom 7-page production site (excl. $6/mo hosting)' },
+      { num: '$15K\u2013$30K', desc: 'Equivalent agency cost avoided' },
+    ],
+  },
+  {
     name: 'Career outcomes',
     stats: [
       { num: '$60M\u2192$250M', desc: 'Revenue growth supported over a decade at Harry Winston' },
@@ -29,14 +37,6 @@ const sets = [
     ],
   },
   {
-    name: 'Efficiency wins',
-    stats: [
-      { num: '66%', desc: 'Reduction in gemstone safety stock via supply chain improvements' },
-      { num: '40%', desc: 'Year-over-year sales volume increase via Dynamics NAV forecasting' },
-      { num: '$200K', desc: 'ERP divestment project delivered on time and on budget' },
-    ],
-  },
-  {
     name: 'AI and current work',
     stats: [
       { num: '50+', desc: 'Sessions run on the job search agent with consistent output quality' },
@@ -45,11 +45,11 @@ const sets = [
     ],
   },
   {
-    name: 'This site',
+    name: 'Efficiency wins',
     stats: [
-      { num: '22 hrs', desc: 'Concept to live URL \u2014 strategy, copy, build, and deployment' },
-      { num: '$0', desc: 'Build cost for a custom 7-page production site (excl. $6/mo hosting)' },
-      { num: '$15K\u2013$30K', desc: 'Equivalent agency cost avoided' },
+      { num: '66%', desc: 'Reduction in gemstone safety stock via supply chain improvements' },
+      { num: '40%', desc: 'Year-over-year sales volume increase via Dynamics NAV forecasting' },
+      { num: '$200K', desc: 'ERP divestment project delivered on time and on budget' },
     ],
   },
 ];
