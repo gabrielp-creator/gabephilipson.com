@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import Hero from '@/components/Hero/Hero';
 import Button from '@/components/Button/Button';
-import { getBlogPost } from '@/sanity/queries';
+import { getBlogPost, getBlogPosts } from '@/sanity/queries';
 import styles from './page.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -31,7 +32,7 @@ const portableTextComponents = {
 function formatDate(dateStr: string | undefined) {
   if (!dateStr) return '';
   const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -42,8 +43,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return <div>Post not found.</div>;
   }
 
+  const allPosts = await getBlogPosts();
+  const otherPosts = allPosts.filter((p: { slug: string }) => p.slug !== slug);
+
   return (
     <>
+      <div className={styles.backLink}>
+        <Link href="/blog">&larr; Back to Blog</Link>
+      </div>
       <Hero eyebrow={post.eyebrow || 'Blog'} headline={post.title}>
         <div className={styles.meta}>
           <span>{post.authorName || 'Gabriel Philipson'}</span>
@@ -72,6 +79,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h2 className={styles.ctaTitle}>{post.ctaTitle}</h2>
           {post.ctaBody && <p className={styles.ctaBody}>{post.ctaBody}</p>}
           <Button href="/ai-poc-lab">View AI Projects</Button>
+        </div>
+      )}
+
+      {otherPosts.length > 0 && (
+        <div className={styles.morePosts}>
+          <h3 className={styles.morePostsTitle}>More Posts</h3>
+          {otherPosts.map((p: { slug: string; title: string; publishDate?: string; readTime?: string }) => (
+            <Link href={`/blog/${p.slug}`} className={styles.morePostCard} key={p.slug}>
+              <span className={styles.morePostCardTitle}>{p.title}</span>
+              <span className={styles.morePostCardMeta}>{formatDate(p.publishDate)}{p.readTime ? ` · ${p.readTime}` : ''}</span>
+            </Link>
+          ))}
         </div>
       )}
     </>

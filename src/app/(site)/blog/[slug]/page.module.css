@@ -1,3 +1,18 @@
+.backLink {
+  margin-bottom: 0.5rem;
+}
+
+.backLink a {
+  font-size: 13px;
+  color: var(--color-primary-medium);
+  font-family: var(--font-abel), 'Abel', sans-serif;
+  text-decoration: none;
+}
+
+.backLink a:hover {
+  color: var(--color-primary);
+}
+
 .meta {
   display: flex;
   gap: 1.5rem;
@@ -109,4 +124,44 @@
   margin-bottom: 1rem;
   line-height: 1.6;
   max-width: 520px;
+}
+
+.morePosts {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--color-divider);
+  margin-bottom: 3rem;
+}
+
+.morePostsTitle {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 14px;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.morePostCard {
+  display: block;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid var(--color-divider);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.morePostCard:hover {
+  border-bottom-color: var(--color-primary-light);
+}
+
+.morePostCardTitle {
+  display: block;
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 13px;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.morePostCardMeta {
+  font-size: 12px;
+  color: var(--color-light);
+  font-family: var(--font-abel), 'Abel', sans-serif;
 }
