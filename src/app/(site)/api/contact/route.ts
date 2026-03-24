@@ -35,8 +35,8 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'IES Contact Form <onboarding@resend.dev>',
-        to: ['gabe@gabephilipson.com'],
+        from: 'IES Contact Form <noreply@contact.gabephilipson.com>',
+        to: ['gabe@iesgroupco.com'],
         subject: `Contact Form: ${name}`,
         reply_to: email,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
