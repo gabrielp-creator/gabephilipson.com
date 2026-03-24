@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OG Image Preview — Option A</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Abel&display=swap" rel="stylesheet">
+<style>
+  body { margin: 40px; background: #f0f0f0; font-family: Arial, sans-serif; }
+  h2 { margin-bottom: 12px; color: #333; }
+  p { color: #666; margin-bottom: 20px; font-size: 14px; }
+  .og-card {
+    width: 1200px;
+    height: 630px;
+    background: #fff;
+    border-left: 8px solid #005C8F;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    gap: 48px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .og-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 60%, #f5f8fb 60%);
+  }
+  .og-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid #CCEAFC;
+  }
+  .og-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(20deg) scale(1.05);
+    object-position: 43% center;
+  }
+  .og-content {
+    z-index: 1;
+  }
+  .og-logo {
+    margin-bottom: 24px;
+  }
+  .og-logo img {
+    height: 55px;
+    width: auto;
+  }
+  .og-name {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 42px;
+    color: #005C8F;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .og-title {
+    font-family: 'Abel', sans-serif;
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  .og-industries {
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 32px;
+  }
+  .og-url {
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #1C75BC;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+  <h2>OG Image Preview — Option A (1200x630)</h2>
+  <p>This is how the image will look when shared on LinkedIn or X. Screenshot this or save as an image.</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-photo">
+      <img src="/headshot.png" alt="Gabriel Philipson">
+    </div>
+    <div class="og-content">
+      <div class="og-logo">
+        <img src="/ies-logo.png" alt="IES">
+      </div>
+      <div class="og-name">Gabriel Philipson</div>
+      <div class="og-title">Technology Executive & ERP Consultant</div>
+      <div class="og-industries">Financial Services &middot; Retail &middot; Jewelry &middot; Aviation &middot; Ecommerce</div>
+      <div class="og-url">gabephilipson.com</div>
+    </div>
+  </div>
+</body>
+</html>
