@@ -3,12 +3,13 @@
   border-radius: 12px;
   margin-bottom: 1.25rem;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 
 .card:hover {
   border-color: var(--color-primary-light);
+  box-shadow: 0 2px 12px rgba(0, 92, 143, 0.08);
 }
 
 .header {

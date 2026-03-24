@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Gabriel Philipson — ERP Consultant & AI Builder',
+    default: 'Gabriel Philipson — Technology Executive & ERP Consultant',
     template: '%s — IES Consulting Group',
   },
   description: 'Senior technology executive, ERP consultant, and AI builder. 25 years leading digital transformation. Founder of IES Consulting Group. Based in Brooklyn, NY.',

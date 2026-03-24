@@ -40,7 +40,9 @@ export default function ContactPage() {
           <SectionLabel>Details</SectionLabel>
 
           <div className={styles.detailItem}>
-            <div className={styles.detailIcon}>{'\uD83D\uDCCD'}</div>
+            <div className={styles.detailIcon}>
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M128 16C80.56 16 40 53.49 40 104c0 67.42 73.65 122.47 84.57 130.15a8 8 0 009 0C144.35 226.47 216 171.42 216 104c0-50.51-40.56-88-88-88Zm0 60a28 28 0 11-28 28 28 28 0 0128-28Z" fill="#1C75BC"/></svg>
+            </div>
             <div>
               <div className={styles.detailLabel}>Location</div>
               <div className={styles.detailValue}>Brooklyn, NY</div>
@@ -49,7 +51,9 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.detailItem}>
-            <div className={styles.detailIcon}>{'\uD83D\uDC65'}</div>
+            <div className={styles.detailIcon}>
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M216 24H40a16 16 0 00-16 16v176a16 16 0 0016 16h176a16 16 0 0016-16V40a16 16 0 00-16-16ZM96 176H64v-80h32Zm-16-96a16 16 0 1116-16 16 16 0 01-16 16Zm112 96h-32v-44c0-12-4-20-16-20s-20 8-20 20v44h-32v-80h32v12c6-10 16-16 28-16 24 0 40 16 40 44Z" fill="#1C75BC"/></svg>
+            </div>
             <div>
               <div className={styles.detailLabel}>LinkedIn</div>
               <div className={styles.detailValue}>
@@ -62,7 +66,9 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.detailItem}>
-            <div className={styles.detailIcon}>{'\uD83C\uDFE2'}</div>
+            <div className={styles.detailIcon}>
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M240 208h-16V96a16 16 0 00-16-16h-56V32a16 16 0 00-16-16H48a16 16 0 00-16 16v176H16a8 8 0 000 16h224a8 8 0 000-16ZM80 64h32a8 8 0 010 16H80a8 8 0 010-16Zm0 40h32a8 8 0 010 16H80a8 8 0 010-16Zm-8 56a8 8 0 01-8-8v-8a8 8 0 0116 0v8a8 8 0 01-8 8Zm48 48h-32v-32h32Zm8-56a8 8 0 01-8-8v-8a8 8 0 0116 0v8a8 8 0 01-8 8Zm56 56h-48v-80h48Z" fill="#1C75BC"/></svg>
+            </div>
             <div>
               <div className={styles.detailLabel}>Company</div>
               <div className={styles.detailValue}>

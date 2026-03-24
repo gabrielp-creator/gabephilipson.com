@@ -20,8 +20,8 @@ export default function HomePage() {
     <>
       <section className={styles.hero}>
         <p className={styles.eyebrow}>Gabriel Philipson</p>
-        <h1 className={styles.headline}>I&apos;ve Led the Strategy and Done the Work. AI Just Raised the Ceiling.</h1>
-        <p className={styles.subhead}>I&apos;ve spent 20 years leading technology at the executive level, managing teams, owning roadmaps, partnering with the C-suite. At this point in my career, I delegate what should be delegated. But AI has changed what one person can build, and I&apos;ve been building. This site documents both sides: the client work and the AI systems I&apos;ve put together myself.</p>
+        <h1 className={styles.headline}>I&apos;ve Led the Strategy and Done the Work.</h1>
+        <p className={styles.subhead}>20 years leading enterprise technology at the executive level. ERP strategy, platform modernization, digital transformation. I&apos;ve built and led teams, owned roadmaps, and partnered with the C-suite across financial services, retail, aviation, and ecommerce. I also build AI systems. This site documents both sides of that.</p>
         <div className={styles.ctas}>
           <Button href="/case-studies">See the Work</Button>
           <Button href="/ai-poc-lab" variant="secondary">Explore AI Projects</Button>

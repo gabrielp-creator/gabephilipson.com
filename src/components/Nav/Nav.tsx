@@ -7,9 +7,9 @@ import { useState } from 'react';
 import styles from './Nav.module.css';
 
 const navLinks = [
-  { href: '/services', label: 'Services' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/ai-poc-lab', label: 'AI / POC Lab' },
+  { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
