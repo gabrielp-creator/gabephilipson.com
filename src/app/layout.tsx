@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { audiowide, abel } from '@/lib/fonts';
 import './globals.css';
 
@@ -38,7 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${audiowide.variable} ${abel.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
