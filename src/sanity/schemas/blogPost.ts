@@ -22,6 +22,26 @@ export const blogPost = defineType({
           title: 'Pull Quote',
           fields: [defineField({ name: 'text', title: 'Quote Text', type: 'string' })],
         },
+        {
+          type: 'object',
+          name: 'statRow',
+          title: 'Stat Row',
+          fields: [
+            defineField({
+              name: 'stats',
+              title: 'Stats',
+              type: 'array',
+              of: [{
+                type: 'object',
+                name: 'stat',
+                fields: [
+                  defineField({ name: 'number', title: 'Number', type: 'string' }),
+                  defineField({ name: 'label', title: 'Label', type: 'string' }),
+                ],
+              }],
+            }),
+          ],
+        },
       ],
     }),
     defineField({ name: 'authorName', title: 'Author Name', type: 'string', initialValue: 'Gabriel Philipson' }),

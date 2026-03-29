@@ -44,6 +44,39 @@
   border-bottom-color: var(--color-primary-medium);
 }
 
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat {
+  background: #f5f8fb;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.statNum {
+  font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+  font-size: 20px;
+  color: var(--color-primary-medium);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .statRow {
+    grid-template-columns: 1fr;
+  }
+}
+
 .pull {
   font-family: var(--font-audiowide), 'Audiowide', sans-serif;
   font-size: 18px;

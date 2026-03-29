@@ -27,6 +27,16 @@ const portableTextComponents = {
     pullQuote: ({ value }: { value: { text: string } }) => (
       <div className={styles.pull}>{value.text}</div>
     ),
+    statRow: ({ value }: { value: { stats: { number: string; label: string; _key: string }[] } }) => (
+      <div className={styles.statRow}>
+        {value.stats?.map((stat) => (
+          <div key={stat._key} className={styles.stat}>
+            <div className={styles.statNum}>{stat.number}</div>
+            <div className={styles.statLabel}>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    ),
   },
 };
 

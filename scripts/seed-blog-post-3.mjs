@@ -77,17 +77,12 @@ const doc = {
       ],
     },
     {
-      _type: 'block',
+      _type: 'statRow',
       _key: 'b4',
-      style: 'normal',
-      markDefs: [],
-      children: [
-        {
-          _type: 'span',
-          _key: 's4',
-          text: '$14B — OpenAI\'s projected cash burn in 2026, up from $8–9B in 2025 · 17:1 — Ratio of AI infrastructure investment to consumer AI revenue in 2025 · $3T — Morgan Stanley estimate for global data center spending between 2025 and 2028',
-          marks: [],
-        },
+      stats: [
+        { _type: 'stat', _key: 'stat1', number: '$14B', label: "OpenAI's projected cash burn in 2026, up from $8–9B in 2025" },
+        { _type: 'stat', _key: 'stat2', number: '17:1', label: 'Ratio of AI infrastructure investment to consumer AI revenue in 2025' },
+        { _type: 'stat', _key: 'stat3', number: '$3T', label: 'Morgan Stanley estimate for global data center spending between 2025 and 2028' },
       ],
     },
     {
