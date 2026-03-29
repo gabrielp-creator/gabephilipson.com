@@ -4,6 +4,7 @@ import { PortableText } from '@portabletext/react';
 import Hero from '@/components/Hero/Hero';
 import Button from '@/components/Button/Button';
 import { getBlogPost, getBlogPosts } from '@/sanity/queries';
+import CommentForm from '@/components/CommentForm/CommentForm';
 import styles from './page.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -81,6 +82,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <Button href="/ai-poc-lab">View AI Projects</Button>
         </div>
       )}
+
+      <CommentForm postTitle={post.title} postSlug={slug} />
 
       {otherPosts.length > 0 && (
         <div className={styles.morePosts}>
