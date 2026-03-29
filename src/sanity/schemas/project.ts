@@ -35,6 +35,18 @@ export const project = defineType({
       }],
     }),
     defineField({
+      name: 'workflow',
+      title: 'Workflow Steps',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          defineField({ name: 'title', title: 'Step Title', type: 'string' }),
+          defineField({ name: 'body', title: 'Step Description', type: 'text' }),
+        ],
+      }],
+    }),
+    defineField({
       name: 'screenshots',
       title: 'Screenshots',
       type: 'array',

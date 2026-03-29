@@ -6,6 +6,12 @@ import Lightbox from '@/components/Lightbox/Lightbox';
 import { projectScreenshots } from '@/data/screenshots';
 import styles from './page.module.css';
 
+interface WorkflowStep {
+  _key: string;
+  title: string;
+  body: string;
+}
+
 interface Project {
   title: string;
   badgeText: string;
@@ -15,6 +21,7 @@ interface Project {
   problem: string;
   tags: string[];
   detailSections: { _key: string; label: string; body: string }[];
+  workflow?: WorkflowStep[];
   screenshots?: string[];
   demoUrl?: string;
 }
@@ -70,6 +77,22 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                   <div className={styles.detailBody}>{d.body}</div>
                 </div>
               ))}
+              {p.workflow && p.workflow.length > 0 && (
+                <div className={styles.detailSection}>
+                  <div className={styles.detailLabel}>The {p.workflow.length}-step workflow</div>
+                  <ol className={styles.workflowList}>
+                    {p.workflow.map((step, idx) => (
+                      <li key={step._key || idx} className={styles.workflowStep}>
+                        <div className={styles.workflowNum}>{idx + 1}</div>
+                        <div className={styles.workflowContent}>
+                          <div className={styles.workflowTitle}>{step.title}</div>
+                          <div className={styles.workflowBody}>{step.body}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
               <div className={styles.screenshots}>
                 <div className={styles.detailLabel}>Screenshots</div>
                 {htmlShots ? (

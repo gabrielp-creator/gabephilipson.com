@@ -56,6 +56,7 @@ export async function getProjects() {
     problem,
     tags,
     detailSections,
+    workflow,
     "screenshots": screenshots[].asset->url,
     demoUrl,
     order
