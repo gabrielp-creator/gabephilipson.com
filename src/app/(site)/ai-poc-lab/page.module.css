@@ -197,6 +197,55 @@
   font-family: var(--font-abel), 'Abel', sans-serif;
 }
 
+.htmlScreenshots {
+  margin-top: 0.5rem;
+}
+
+.screenshotTabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.screenshotTab {
+  padding: 4px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--font-abel), 'Abel', sans-serif;
+  letter-spacing: 0.04em;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.screenshotTab:hover {
+  border-color: var(--color-primary-medium);
+  color: var(--color-primary-medium);
+}
+
+.screenshotTabActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.htmlScreenshotFrame {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid var(--color-divider);
+}
+
+.screenshotCaption {
+  margin-top: 0.6rem;
+  font-size: 12px;
+  color: var(--color-muted);
+  font-family: var(--font-abel), 'Abel', sans-serif;
+  line-height: 1.5;
+}
+
 .coming {
   margin-bottom: 3rem;
 }

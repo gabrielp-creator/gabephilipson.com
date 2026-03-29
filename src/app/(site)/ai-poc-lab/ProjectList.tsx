@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ExpandableCard from '@/components/ExpandableCard/ExpandableCard';
 import Lightbox from '@/components/Lightbox/Lightbox';
+import { projectScreenshots } from '@/data/screenshots';
 import styles from './page.module.css';
 
 interface Project {
@@ -24,10 +25,16 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
     title: '',
     images: [],
   });
+  const [activeTab, setActiveTab] = useState<Record<string, number>>({});
 
   return (
     <>
-      {projects.map((p, i) => (
+      {projects.map((p, i) => {
+        const projectKey = p.badgeText.toLowerCase();
+        const htmlShots = projectScreenshots[projectKey];
+        const activeTabIndex = activeTab[projectKey] ?? 0;
+
+        return (
         <ExpandableCard
           key={p.title}
           id={`proj-${i}`}
@@ -65,7 +72,28 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               ))}
               <div className={styles.screenshots}>
                 <div className={styles.detailLabel}>Screenshots</div>
-                {p.screenshots && p.screenshots.length > 0 ? (
+                {htmlShots ? (
+                  <div className={styles.htmlScreenshots}>
+                    <div className={styles.screenshotTabs}>
+                      {htmlShots.map((s, idx) => (
+                        <button
+                          key={s.label}
+                          className={`${styles.screenshotTab} ${activeTabIndex === idx ? styles.screenshotTabActive : ''}`}
+                          onClick={(e) => { e.stopPropagation(); setActiveTab(prev => ({ ...prev, [projectKey]: idx })); }}
+                        >
+                          {s.label}
+                        </button>
+                      ))}
+                    </div>
+                    <div
+                      className={styles.htmlScreenshotFrame}
+                      dangerouslySetInnerHTML={{ __html: htmlShots[activeTabIndex].html }}
+                    />
+                    <div className={styles.screenshotCaption}>
+                      {htmlShots[activeTabIndex].caption}
+                    </div>
+                  </div>
+                ) : p.screenshots && p.screenshots.length > 0 ? (
                   <div
                     className={styles.screenshotThumb}
                     onClick={(e) => {
@@ -100,7 +128,8 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             </>
           }
         />
-      ))}
+        );
+      })}
 
       <Lightbox
         isOpen={lightbox.isOpen}
