@@ -84,6 +84,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </div>
 
+      <CommentForm postTitle={post.title} postSlug={slug} />
+
       {post.ctaTitle && (
         <div className={styles.cta}>
           {post.ctaLabel && <p className={styles.ctaLabel}>{post.ctaLabel}</p>}
@@ -92,8 +94,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <Button href="/ai-poc-lab">View AI Projects</Button>
         </div>
       )}
-
-      <CommentForm postTitle={post.title} postSlug={slug} />
 
       {otherPosts.length > 0 && (
         <div className={styles.morePosts}>
