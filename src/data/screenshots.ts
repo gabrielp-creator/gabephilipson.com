@@ -59,7 +59,7 @@ export const cdtScreenshots: Screenshot[] = [
   <div class="body">
     <div class="label-row">
       <div>
-        <div class="phase-title">Set Evan's Priorities</div>
+        <div class="phase-title">Set Student's Priorities</div>
         <div class="phase-sub">Drag each slider to weight factors 0–10. Uncheck to exclude a parameter entirely.</div>
       </div>
       <div class="top-btns">
@@ -79,7 +79,7 @@ export const cdtScreenshots: Screenshot[] = [
     </div>
     <div class="param-row high">
       <div class="param-check"></div>
-      <div class="param-info"><div class="param-label">D3 Baseball / Football Opportunity</div><div class="param-desc">Realistic chance Evan makes the roster and plays</div></div>
+      <div class="param-info"><div class="param-label">D3 Baseball / Football Opportunity</div><div class="param-desc">Realistic chance student makes the roster and plays</div></div>
       <div class="slider-area"><div class="fake-slider"><div class="fake-thumb" style="width:70%"></div></div><div class="param-val val-high">7</div></div>
     </div>
     <div class="param-row high">
@@ -245,7 +245,7 @@ export const cdtScreenshots: Screenshot[] = [
   {
     label: 'Saved Results',
     caption:
-      'Multi-session persistence — different runs saved under different names (Gabriel\'s run vs. Evan\'s run). Each saved result captures the full weight configuration and top-3 rankings.',
+      'Multi-session persistence — different runs saved under different names (parent\'s run vs. student\'s run). Each saved result captures the full weight configuration and top-3 rankings.',
     html: `
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
