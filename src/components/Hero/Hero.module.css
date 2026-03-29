@@ -30,7 +30,6 @@
   width: 180px;
   height: 180px;
   object-fit: cover;
-  transform: rotate(20deg) scale(1.06);
 }
 
 .eyebrow {
