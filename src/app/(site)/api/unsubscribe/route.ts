@@ -12,9 +12,8 @@ export async function GET(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
 
-  if (!apiKey || !audienceId) {
+  if (!apiKey) {
     return new NextResponse(unsubscribePage('Service not configured.', false), {
       headers: { 'Content-Type': 'text/html' },
       status: 500,
@@ -23,7 +22,7 @@ export async function GET(request: Request) {
 
   try {
     const res = await fetch(
-      `https://api.resend.com/audiences/${audienceId}/contacts/${contactId}`,
+      `https://api.resend.com/contacts/${contactId}`,
       {
         method: 'PATCH',
         headers: {

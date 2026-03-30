@@ -34,10 +34,9 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const audienceId = process.env.RESEND_AUDIENCE_ID;
 
-    if (!apiKey || !audienceId) {
-      console.error('RESEND_API_KEY or RESEND_AUDIENCE_ID is not configured');
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not configured');
       return NextResponse.json(
         { error: 'Email service not configured' },
         { status: 500 }
@@ -45,7 +44,7 @@ export async function POST(request: Request) {
     }
 
     const contactsRes = await fetch(
-      `https://api.resend.com/audiences/${audienceId}/contacts`,
+      'https://api.resend.com/contacts',
       {
         headers: { Authorization: `Bearer ${apiKey}` },
       }
