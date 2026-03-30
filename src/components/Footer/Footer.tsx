@@ -7,6 +7,7 @@ const footerLinks = [
   { href: '/ai-poc-lab', label: 'AI / POC Lab' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
+  { href: '/blog#subscribe', label: 'Subscribe' },
   { href: '/contact', label: 'Contact' },
 ];
 

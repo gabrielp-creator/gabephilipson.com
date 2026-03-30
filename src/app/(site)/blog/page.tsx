@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Hero from '@/components/Hero/Hero';
 import SectionLabel from '@/components/SectionLabel/SectionLabel';
 import { getBlogPosts } from '@/sanity/queries';
+import SubscribeForm from '@/components/SubscribeForm/SubscribeForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -54,6 +55,8 @@ export default async function BlogPage() {
           );
         })}
       </section>
+
+      <SubscribeForm />
     </>
   );
 }
