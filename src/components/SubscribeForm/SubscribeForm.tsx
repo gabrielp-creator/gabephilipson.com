@@ -30,7 +30,7 @@ export default function SubscribeForm() {
     return (
       <section id="subscribe" className={styles.wrapper}>
         <div className={styles.success}>
-          You&apos;re subscribed! You&apos;ll get an email when new posts are published.
+          Check your inbox! We&apos;ve sent a confirmation link to verify your email.
         </div>
       </section>
     );
