@@ -42,10 +42,10 @@ export async function POST(request: Request) {
     );
 
     if (!res.ok) {
-      const errorText = await res.text();
-      console.error('Resend error:', res.status, errorText);
+      const errorData = await res.json();
+      console.error('Resend error:', errorData);
       return NextResponse.json(
-        { error: 'Failed to subscribe', resend_status: res.status, resend_error: errorText },
+        { error: 'Failed to subscribe' },
         { status: 500 }
       );
     }
