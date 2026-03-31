@@ -71,7 +71,7 @@ const doc = {
         {
           _type: 'span',
           _key: 's3b',
-          text: ' and found the API equivalent of their $200 Max subscription would have cost $15,000. A single month of heavy usage would have run $5,623 at API rates. For the many people on the standard $20 Claude Pro subscription, the gap is similar in proportion. The compute cost of what a heavy Pro user actually consumes runs multiples of what they pay. The subscription pricing exists not because AI is cheap to deliver, but because the companies providing it are absorbing the difference, funded by billions in venture capital, while they compete for market share.',
+          text: ' and found the API equivalent of their $100 Max subscription would have cost $15,000. A single month of heavy usage would have run $5,623 at API rates. For the many people on the standard $20 Claude Pro subscription, the gap is similar in proportion. The compute cost of what a heavy Pro user actually consumes runs multiples of what they pay. The subscription pricing exists not because AI is cheap to deliver, but because the companies providing it are absorbing the difference, funded by billions in venture capital, while they compete for market share.',
           marks: [],
         },
       ],
