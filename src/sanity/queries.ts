@@ -59,6 +59,7 @@ export async function getProjects() {
     workflow,
     "screenshots": screenshots[].asset->url,
     demoUrl,
+    sandboxUrl,
     order
   }`);
 }

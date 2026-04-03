@@ -53,6 +53,7 @@ export const project = defineType({
       of: [{ type: 'image' }],
     }),
     defineField({ name: 'demoUrl', title: 'Demo URL', type: 'url' }),
+    defineField({ name: 'sandboxUrl', title: 'Sandbox URL', type: 'url' }),
     defineField({ name: 'order', title: 'Display Order', type: 'number' }),
     defineField({ name: 'featured', title: 'Featured', type: 'boolean', initialValue: true }),
   ],

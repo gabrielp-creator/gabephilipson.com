@@ -24,6 +24,7 @@ interface Project {
   workflow?: WorkflowStep[];
   screenshots?: string[];
   demoUrl?: string;
+  sandboxUrl?: string;
 }
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
@@ -57,6 +58,17 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                     <span className={`${styles.status} ${p.status === 'Fully Operational' ? styles.statusLive : styles.statusProgress}`}>
                       {p.status}
                     </span>
+                    {p.sandboxUrl && (
+                      <a
+                        href={p.sandboxUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.sandboxLink}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        &#9654; Live Sandbox
+                      </a>
+                    )}
                   </div>
                   <div className={styles.cardDesc}>{p.shortDescription}</div>
                 </div>
