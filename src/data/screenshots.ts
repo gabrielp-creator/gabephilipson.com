@@ -351,7 +351,192 @@ export const cdtScreenshots: Screenshot[] = [
   },
 ];
 
+export const cmpScreenshots: Screenshot[] = [
+  {
+    label: 'Overview',
+    caption:
+      'The Compass hero — Phase II active with 60 features, 7+ pipeline runs, and an average of 17,775 tokens per full run from problem to requirements.',
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .cmp-wrap { background: #f5f8fb; border-radius: 12px; overflow: hidden; font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; }
+  .cmp-hero { padding: 24px 28px 20px; }
+  .cmp-hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+  .cmp-hero-left { display: flex; align-items: flex-start; gap: 14px; }
+  .cmp-icon { width: 48px; height: 48px; background: #005C8F; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cmp-icon svg { width: 28px; height: 28px; }
+  .cmp-title { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; letter-spacing: -0.3px; }
+  .cmp-sub { font-size: 13px; color: #555; line-height: 1.5; max-width: 420px; }
+  .cmp-badge { font-size: 11px; padding: 5px 12px; border-radius: 3px; background: #D4EDDA; color: #1a6b35; white-space: nowrap; font-weight: 600; }
+  .cmp-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0 28px 24px; border-bottom: 1px solid #e0e0e0; }
+  .cmp-metric-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-bottom: 3px; }
+  .cmp-metric-value { font-size: 26px; font-weight: 700; color: #1a1a1a; }
+  .cmp-metric-note { font-size: 11px; color: #888; margin-top: 2px; }
+  .cmp-stages { padding: 20px 28px; }
+  .cmp-stages-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #676C74; margin-bottom: 12px; }
+  .cmp-stages-row { display: flex; align-items: flex-start; gap: 0; }
+  .cmp-stage { flex: 1; padding: 10px 12px; }
+  .cmp-stage-name { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .cmp-stage-desc { font-size: 11px; color: #555; line-height: 1.5; }
+  .cmp-arrow { display: flex; align-items: center; padding-top: 14px; font-size: 18px; color: #B8C0C4; flex-shrink: 0; }
+  .cmp-note { font-size: 11px; color: #666; font-style: italic; padding: 0 28px 20px; }
+</style>
+<div class="cmp-wrap">
+  <div class="cmp-hero">
+    <div class="cmp-hero-top">
+      <div class="cmp-hero-left">
+        <div class="cmp-icon">
+          <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="50" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.3"/><circle cx="70" cy="70" r="3.5" fill="#fff"/><polygon points="70,24 76,64 70,57 64,64" fill="#fff"/><polygon points="70,116 64,76 70,83 76,76" fill="rgba(255,255,255,0.35)"/><path d="M32,94 L50,94 L70,64 L95,50" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><circle cx="95" cy="50" r="4.5" fill="#D4EDDA" stroke="#D4EDDA" stroke-width="1.5"/></svg>
+        </div>
+        <div>
+          <div class="cmp-title">Compass — PM Agent Pipeline</div>
+          <div class="cmp-sub">Your personal AI product manager. Describe a problem. Get a strategy. Ship requirements.</div>
+        </div>
+      </div>
+      <div class="cmp-badge">Phase II, Active</div>
+    </div>
+  </div>
+  <div class="cmp-metrics">
+    <div><div class="cmp-metric-label">Phase</div><div class="cmp-metric-value">II of III</div><div class="cmp-metric-note">Phase I complete, Phase II active</div></div>
+    <div><div class="cmp-metric-label">Features</div><div class="cmp-metric-value">60</div><div class="cmp-metric-note">49 live, 11 planned</div></div>
+    <div><div class="cmp-metric-label">Pipeline runs</div><div class="cmp-metric-value">7+</div><div class="cmp-metric-note">Software, creative, business</div></div>
+    <div><div class="cmp-metric-label">Avg tokens/run</div><div class="cmp-metric-value">17,775</div><div class="cmp-metric-note">Full pipeline end-to-end</div></div>
+  </div>
+  <div class="cmp-stages">
+    <div class="cmp-stages-label">How it works</div>
+    <div class="cmp-stages-row">
+      <div class="cmp-stage">
+        <div class="cmp-stage-name">Discovery</div>
+        <div class="cmp-stage-desc">Frames the problem, identifies target user, surfaces assumptions with structured risk classification.</div>
+      </div>
+      <div class="cmp-arrow">→</div>
+      <div class="cmp-stage">
+        <div class="cmp-stage-name">Strategy</div>
+        <div class="cmp-stage-desc">OKRs, ranked features with rationale, explicit out-of-scope. Picks the right framework for the project.</div>
+      </div>
+      <div class="cmp-arrow">→</div>
+      <div class="cmp-stage">
+        <div class="cmp-stage-name">Requirements</div>
+        <div class="cmp-stage-desc">User stories with Given/When/Then acceptance criteria, NFRs, open questions with blocking dependencies.</div>
+      </div>
+    </div>
+  </div>
+  <div class="cmp-note">Each stage is reviewed and approved by you before the next one runs. Automation is earned, not assumed.</div>
+</div>`,
+  },
+  {
+    label: 'Feature Landscape',
+    caption:
+      '60 features across 9 categories — 49 live, 11 planned. Highlights include brief extraction, structured risk classification, stakeholder-tailored exports, and configurable automation.',
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .fl-wrap { background: #f5f8fb; border-radius: 12px; overflow: hidden; font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; padding: 24px 28px; }
+  .fl-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #676C74; margin-bottom: 6px; }
+  .fl-title { font-size: 16px; font-weight: 700; margin-bottom: 18px; }
+  .fl-bars { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .fl-bar-row { display: flex; align-items: center; gap: 10px; }
+  .fl-bar-label { font-size: 11px; color: #555; width: 100px; text-align: right; flex-shrink: 0; }
+  .fl-bar-track { flex: 1; height: 20px; display: flex; border-radius: 3px; overflow: hidden; background: #e8e8e4; }
+  .fl-bar-live { background: #1D9E75; height: 100%; }
+  .fl-bar-planned { background: #B5D4F4; height: 100%; }
+  .fl-bar-count { font-size: 11px; color: #888; width: 24px; text-align: right; }
+  .fl-legend { display: flex; gap: 14px; font-size: 11px; color: #666; margin-bottom: 20px; }
+  .fl-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .fl-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .fl-card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 14px; background: #fff; }
+  .fl-card-vision { border: 2px solid #1C75BC; }
+  .fl-card-cat { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .fl-card-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+  .fl-card-desc { font-size: 11px; color: #888; line-height: 1.4; }
+</style>
+<div class="fl-wrap">
+  <div class="fl-label">Feature landscape</div>
+  <div class="fl-title">60 features across 9 categories</div>
+  <div class="fl-bars">
+    <div class="fl-bar-row"><div class="fl-bar-label">Core pipeline</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:63.6%"></div><div class="fl-bar-planned" style="width:36.4%"></div></div><div class="fl-bar-count">11</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Intake</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:87.5%"></div><div class="fl-bar-planned" style="width:12.5%"></div></div><div class="fl-bar-count">8</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Agent intel</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:80%"></div><div class="fl-bar-planned" style="width:20%"></div></div><div class="fl-bar-count">10</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Stakeholder</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:100%"></div></div><div class="fl-bar-count">8</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Export</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:85.7%"></div><div class="fl-bar-planned" style="width:14.3%"></div></div><div class="fl-bar-count">7</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">UI/UX</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:100%"></div></div><div class="fl-bar-count">8</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Architecture</div><div class="fl-bar-track"><div class="fl-bar-live" style="width:83.3%"></div><div class="fl-bar-planned" style="width:16.7%"></div></div><div class="fl-bar-count">6</div></div>
+    <div class="fl-bar-row"><div class="fl-bar-label">Phase III</div><div class="fl-bar-track"><div class="fl-bar-planned" style="width:100%"></div></div><div class="fl-bar-count">2</div></div>
+  </div>
+  <div class="fl-legend"><span><span class="fl-dot" style="background:#1D9E75;"></span>Live (49)</span><span><span class="fl-dot" style="background:#B5D4F4;"></span>Planned (11)</span></div>
+  <div class="fl-cards">
+    <div class="fl-card"><div class="fl-card-cat" style="color:#0F6E56;">Core</div><div class="fl-card-name">Three-stage AI pipeline</div><div class="fl-card-desc">Problem to requirements in minutes, not weeks</div></div>
+    <div class="fl-card"><div class="fl-card-cat" style="color:#534AB7;">Intake</div><div class="fl-card-name">Brief extraction</div><div class="fl-card-desc">Describe your problem in plain English</div></div>
+    <div class="fl-card"><div class="fl-card-cat" style="color:#D85A30;">Export</div><div class="fl-card-name">Stakeholder-tailored exports</div><div class="fl-card-desc">Same project, different audiences</div></div>
+    <div class="fl-card"><div class="fl-card-cat" style="color:#993556;">Intelligence</div><div class="fl-card-name">Coherence check</div><div class="fl-card-desc">Catches contradictions before you waste time</div></div>
+    <div class="fl-card"><div class="fl-card-cat" style="color:#0F6E56;">Core</div><div class="fl-card-name">Configurable automation</div><div class="fl-card-desc">Full control to hands-free, your choice</div></div>
+    <div class="fl-card fl-card-vision"><div class="fl-card-cat" style="color:#185FA5;">Phase III vision</div><div class="fl-card-name">Compass marketplace</div><div class="fl-card-desc">From requirements to built product</div></div>
+  </div>
+</div>`,
+  },
+  {
+    label: 'Test Results',
+    caption:
+      '7 documented pipeline runs with 100% schema compliance since Round 2. The pipeline adapts naturally to non-software domains — creative and business scenarios require no special handling.',
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .tr-wrap { background: #f5f8fb; border-radius: 12px; overflow: hidden; font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; padding: 24px 28px; }
+  .tr-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #676C74; margin-bottom: 6px; }
+  .tr-title { font-size: 14px; font-weight: 700; margin-bottom: 18px; }
+  .tr-chart { display: flex; align-items: flex-end; gap: 0; height: 160px; margin-bottom: 6px; padding: 0 4px; border-bottom: 1px solid #e0e0e0; }
+  .tr-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .tr-bar-stack { display: flex; flex-direction: column; gap: 2px; align-items: center; width: 32px; }
+  .tr-bar { border-radius: 2px 2px 0 0; width: 100%; }
+  .tr-bar-req { background: #D85A30; }
+  .tr-bar-str { background: #1D9E75; }
+  .tr-bar-dis { background: #534AB7; }
+  .tr-bar-label { font-size: 9px; color: #888; margin-top: 6px; text-align: center; }
+  .tr-bar-total { font-size: 9px; color: #555; font-weight: 600; margin-bottom: 3px; }
+  .tr-legend { display: flex; gap: 14px; font-size: 11px; color: #666; margin: 10px 0 18px; }
+  .tr-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .tr-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 14px; }
+  .tr-table th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: #666; padding: 6px 8px; border-bottom: 1px solid #e0e0e0; }
+  .tr-table td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; color: #1a1a1a; }
+  .tr-type { font-size: 10px; padding: 2px 6px; border-radius: 2px; }
+  .tr-type-sw { background: #CCEAFC; color: #005C8F; }
+  .tr-type-cr { background: #FFF3CD; color: #856404; }
+  .tr-insight { font-size: 12px; color: #555; font-style: italic; line-height: 1.5; border-top: 1px solid #e0e0e0; padding-top: 12px; }
+</style>
+<div class="tr-wrap">
+  <div class="tr-label">Test results</div>
+  <div class="tr-title">7 documented pipeline runs. 100% schema compliance since Round 2.</div>
+  <div class="tr-chart">
+    <div class="tr-bar-group"><div class="tr-bar-total">18.2k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:69px;"></div><div class="tr-bar tr-bar-str" style="height:27px;"></div><div class="tr-bar tr-bar-dis" style="height:18px;"></div></div><div class="tr-bar-label">PayFlow</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">17.8k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:71px;"></div><div class="tr-bar tr-bar-str" style="height:27px;"></div><div class="tr-bar tr-bar-dis" style="height:13px;"></div></div><div class="tr-bar-label">BC365 R1</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">19.2k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:81px;"></div><div class="tr-bar tr-bar-str" style="height:24px;"></div><div class="tr-bar tr-bar-dis" style="height:15px;"></div></div><div class="tr-bar-label">BC365 R2</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">14.9k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:63px;"></div><div class="tr-bar tr-bar-str" style="height:20px;"></div><div class="tr-bar tr-bar-dis" style="height:10px;"></div></div><div class="tr-bar-label">BC365 R3</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">18.8k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:75px;"></div><div class="tr-bar tr-bar-str" style="height:26px;"></div><div class="tr-bar tr-bar-dis" style="height:16px;"></div></div><div class="tr-bar-label">Pitcher</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">16.1k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:64px;"></div><div class="tr-bar tr-bar-str" style="height:22px;"></div><div class="tr-bar tr-bar-dis" style="height:15px;"></div></div><div class="tr-bar-label">Furniture</div></div>
+    <div class="tr-bar-group"><div class="tr-bar-total">19.4k</div><div class="tr-bar-stack"><div class="tr-bar tr-bar-req" style="height:81px;"></div><div class="tr-bar tr-bar-str" style="height:25px;"></div><div class="tr-bar tr-bar-dis" style="height:16px;"></div></div><div class="tr-bar-label">Network</div></div>
+  </div>
+  <div class="tr-legend"><span><span class="tr-dot" style="background:#534AB7;"></span>Discovery</span><span><span class="tr-dot" style="background:#1D9E75;"></span>Strategy</span><span><span class="tr-dot" style="background:#D85A30;"></span>Requirements</span></div>
+  <table class="tr-table">
+    <thead><tr><th>Run</th><th>Scenario</th><th>Type</th><th>Tokens</th></tr></thead>
+    <tbody>
+      <tr><td>PayFlow Checkout</td><td>E-commerce payment friction</td><td><span class="tr-type tr-type-sw">Software</span></td><td>18,218</td></tr>
+      <tr><td>BC365 Round 1</td><td>ERP forecasting capability</td><td><span class="tr-type tr-type-sw">Software</span></td><td>17,832</td></tr>
+      <tr><td>BC365 Round 3</td><td>ERP forecasting capability</td><td><span class="tr-type tr-type-sw">Software</span></td><td>14,864</td></tr>
+      <tr><td>Baseball pitcher</td><td>Athletic velocity development</td><td><span class="tr-type tr-type-cr">Creative</span></td><td>18,788</td></tr>
+      <tr><td>Furniture maker</td><td>Client scoping process</td><td><span class="tr-type tr-type-cr">Creative</span></td><td>16,126</td></tr>
+      <tr><td>Networking platform</td><td>Premium conversion optimization</td><td><span class="tr-type tr-type-sw">Software</span></td><td>19,411</td></tr>
+    </tbody>
+  </table>
+  <div class="tr-insight">The pipeline adapts naturally to non-software domains. The baseball pitcher run produced a structured training program. The furniture maker run produced a business process design. No special handling required.</div>
+</div>`,
+  },
+];
+
 /** Map project IDs to their screenshot arrays */
 export const projectScreenshots: Record<string, Screenshot[]> = {
   cdt: cdtScreenshots,
+  cmp: cmpScreenshots,
 };
