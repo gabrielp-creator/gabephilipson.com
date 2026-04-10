@@ -535,8 +535,334 @@ export const cmpScreenshots: Screenshot[] = [
   },
 ];
 
+export const admScreenshots: Screenshot[] = [
+  {
+    label: 'Behavioral Survey',
+    caption:
+      'Block F — Risk Tolerance. The survey never asks students to rate importance on a 1-to-10 scale. Forced-choice scenarios produce real signal where preference scales produce anchored noise. The risk tolerance score directly drives the recommended safeties/targets/reaches mix.',
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .ak-wrap { background: #fff; border-radius: 12px; overflow: hidden; font-family: -apple-system, 'Segoe UI', sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; border: 1px solid #e8eef3; }
+  .ak-header { background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); border-bottom: 1px solid #e8eef3; padding: 22px 28px 18px; }
+  .ak-brand { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .ak-logo-wrap { display: flex; align-items: center; gap: 8px; }
+  .ak-logo-mark { display: inline-block; width: 20px; height: 20px; background: #1C75BC; border-radius: 5px; position: relative; }
+  .ak-logo-mark::after { content: 'A'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; font-family: Arial, sans-serif; }
+  .ak-logo { font-weight: 700; font-size: 16px; color: #1C75BC; letter-spacing: -0.3px; }
+  .ak-account { font-size: 11px; color: #64748b; }
+  .ak-progress { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .ak-step { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; font-weight: 600; white-space: nowrap; }
+  .ak-progress-bar { flex: 1; height: 4px; background: #e8eef3; border-radius: 2px; overflow: hidden; }
+  .ak-progress-fill { width: 87.5%; height: 100%; background: linear-gradient(90deg, #1C75BC 0%, #5FA6DB 100%); }
+  .ak-block-label { font-size: 11px; color: #94a3b8; }
+  .ak-body { padding: 24px 28px 26px; }
+  .ak-question { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; line-height: 1.4; }
+  .ak-q-sub { font-size: 13px; color: #64748b; margin-bottom: 18px; line-height: 1.5; }
+  .ak-options { display: flex; flex-direction: column; gap: 10px; }
+  .ak-option { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border: 1.5px solid #e8eef3; border-radius: 10px; }
+  .ak-option-selected { border-color: #1C75BC; background: #f0f7fc; }
+  .ak-radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #cbd5e1; flex-shrink: 0; margin-top: 2px; position: relative; }
+  .ak-radio-on { border-color: #1C75BC; }
+  .ak-radio-on::after { content: ''; position: absolute; top: 3px; left: 3px; width: 8px; height: 8px; border-radius: 50%; background: #1C75BC; }
+  .ak-option-text { flex: 1; }
+  .ak-option-title { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
+  .ak-option-desc { font-size: 12px; color: #64748b; line-height: 1.5; }
+  .ak-why { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 8px 12px; background: #fef9c3; border: 1px solid #fde68a; border-radius: 6px; font-size: 11px; color: #713f12; }
+  .ak-why-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; background: #facc15; color: #713f12; border-radius: 50%; font-style: italic; font-weight: 800; font-size: 9px; flex-shrink: 0; }
+  .ak-actions { display: flex; justify-content: space-between; margin-top: 20px; }
+  .ak-back { padding: 9px 18px; background: transparent; border: 1px solid #e8eef3; border-radius: 8px; color: #64748b; font-size: 12px; font-weight: 500; }
+  .ak-next { padding: 9px 22px; background: #1C75BC; border: none; border-radius: 8px; color: #fff; font-size: 12px; font-weight: 600; }
+</style>
+<div class="ak-wrap">
+  <div class="ak-header">
+    <div class="ak-brand">
+      <div class="ak-logo-wrap"><span class="ak-logo-mark"></span><span class="ak-logo">AdmitKit Discovery</span></div>
+      <div class="ak-account">student@example.edu</div>
+    </div>
+    <div class="ak-progress">
+      <span class="ak-step">Step 7 of 8</span>
+      <div class="ak-progress-bar"><div class="ak-progress-fill"></div></div>
+    </div>
+    <div class="ak-block-label">Block F · Risk Tolerance</div>
+  </div>
+  <div class="ak-body">
+    <div class="ak-question">Your top-choice school has a 22% admission rate. A school you'd genuinely be happy at has an 85% rate. What do you do?</div>
+    <div class="ak-q-sub">No wrong answer. We use this to recommend a safety/target/reach mix that fits how you actually think about risk.</div>
+    <div class="ak-options">
+      <div class="ak-option ak-option-selected">
+        <div class="ak-radio ak-radio-on"></div>
+        <div class="ak-option-text">
+          <div class="ak-option-title">Apply to both. The reach is worth a real shot.</div>
+          <div class="ak-option-desc">You're willing to spend an essay on a long shot if the upside is meaningful.</div>
+        </div>
+      </div>
+      <div class="ak-option">
+        <div class="ak-radio"></div>
+        <div class="ak-option-text">
+          <div class="ak-option-title">Apply to both, but only if the safety is genuinely a fit.</div>
+          <div class="ak-option-desc">A safety you're happy at, not a fallback you're settling for.</div>
+        </div>
+      </div>
+      <div class="ak-option">
+        <div class="ak-radio"></div>
+        <div class="ak-option-text">
+          <div class="ak-option-title">Skip the reach. Anxiety isn't worth the long odds.</div>
+          <div class="ak-option-desc">You'd rather invest the application energy where the probability is higher.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ak-why"><span class="ak-why-icon">i</span>Behavioral question, never a 1-to-10 scale. Anchored ratings produce noise.</div>
+    <div class="ak-actions">
+      <button class="ak-back">← Block E</button>
+      <button class="ak-next">Continue →</button>
+    </div>
+  </div>
+</div>`,
+  },
+  {
+    label: 'Customize Parameters',
+    caption:
+      "After the six-block survey, the student sees parameters generated dynamically from their responses (universal + personalized) and can opt in to values-based parameters that can't be inferred from behavior. Toggle one on, get a single follow-up question. Skip the section entirely if nothing applies.",
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .ak-wrap { background: #fff; border-radius: 12px; overflow: hidden; font-family: -apple-system, 'Segoe UI', sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; border: 1px solid #e8eef3; }
+  .ak-header { background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); border-bottom: 1px solid #e8eef3; padding: 22px 28px 18px; }
+  .ak-brand { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .ak-logo-wrap { display: flex; align-items: center; gap: 8px; }
+  .ak-logo-mark { display: inline-block; width: 20px; height: 20px; background: #1C75BC; border-radius: 5px; position: relative; }
+  .ak-logo-mark::after { content: 'A'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; font-family: Arial, sans-serif; }
+  .ak-logo { font-weight: 700; font-size: 16px; color: #1C75BC; letter-spacing: -0.3px; }
+  .ak-account { font-size: 11px; color: #64748b; }
+  .ak-step { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; font-weight: 600; }
+  .ak-page-title { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-top: 6px; }
+  .ak-page-sub { font-size: 12px; color: #64748b; margin-top: 4px; line-height: 1.5; }
+  .ak-body { padding: 22px 28px 24px; }
+  .ak-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #1C75BC; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .ak-section-count { background: #e8eef3; color: #64748b; padding: 1px 8px; border-radius: 10px; font-size: 9px; font-weight: 700; letter-spacing: 0; }
+  .ak-section { margin-bottom: 20px; }
+  .ak-pill-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ak-pill { padding: 5px 11px; background: #f0f7fc; border: 1px solid #d6e9f7; border-radius: 14px; font-size: 11px; color: #185FA5; font-weight: 500; }
+  .ak-pill-personal { background: #fef3e8; border-color: #fbd9b9; color: #854F0B; }
+  .ak-toggles { display: flex; flex-direction: column; gap: 7px; }
+  .ak-toggle { display: flex; align-items: flex-start; gap: 12px; padding: 11px 14px; border: 1px solid #e8eef3; border-radius: 9px; }
+  .ak-toggle-on { border-color: #1C75BC; background: #f0f7fc; }
+  .ak-switch { width: 30px; height: 17px; border-radius: 9px; background: #cbd5e1; position: relative; flex-shrink: 0; margin-top: 2px; }
+  .ak-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; }
+  .ak-switch-on { background: #1C75BC; }
+  .ak-switch-on::after { left: 15px; }
+  .ak-toggle-info { flex: 1; }
+  .ak-toggle-title { font-size: 12px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+  .ak-toggle-desc { font-size: 11px; color: #64748b; line-height: 1.45; }
+  .ak-followup { margin-top: 8px; padding: 9px 11px; background: #fff; border: 1px dashed #93c5fd; border-radius: 6px; font-size: 11px; }
+  .ak-followup-q { font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
+  .ak-weight-row { display: flex; align-items: center; gap: 8px; }
+  .ak-weight-track { flex: 1; height: 4px; background: #e0e7ef; border-radius: 2px; overflow: hidden; }
+  .ak-weight-fill { width: 50%; height: 100%; background: #1C75BC; }
+  .ak-weight-val { font-size: 11px; color: #1C75BC; font-weight: 700; }
+  .ak-actions { display: flex; justify-content: space-between; margin-top: 18px; }
+  .ak-back { padding: 9px 18px; background: transparent; border: 1px solid #e8eef3; border-radius: 8px; color: #64748b; font-size: 12px; font-weight: 500; }
+  .ak-next { padding: 9px 22px; background: #1C75BC; border: none; border-radius: 8px; color: #fff; font-size: 12px; font-weight: 600; }
+</style>
+<div class="ak-wrap">
+  <div class="ak-header">
+    <div class="ak-brand">
+      <div class="ak-logo-wrap"><span class="ak-logo-mark"></span><span class="ak-logo">AdmitKit Discovery</span></div>
+      <div class="ak-account">student@example.edu</div>
+    </div>
+    <div class="ak-step">Step 8 of 8 · Customize</div>
+    <div class="ak-page-title">Customize Your Parameters</div>
+    <div class="ak-page-sub">Generated from your survey. Add anything else that should factor in — we'll only ask about what you turn on.</div>
+  </div>
+  <div class="ak-body">
+    <div class="ak-section">
+      <div class="ak-section-label">Generated from your survey<span class="ak-section-count">11 active</span></div>
+      <div class="ak-pill-grid">
+        <span class="ak-pill">Academic Program Fit</span>
+        <span class="ak-pill">Net Cost After Aid</span>
+        <span class="ak-pill">Campus Size</span>
+        <span class="ak-pill">Distance from Home</span>
+        <span class="ak-pill">Campus Location</span>
+        <span class="ak-pill">Campus & Student Life</span>
+        <span class="ak-pill">Weather/Climate</span>
+        <span class="ak-pill ak-pill-personal">Sports Mgmt Program</span>
+        <span class="ak-pill ak-pill-personal">D3 Baseball Opportunity</span>
+        <span class="ak-pill ak-pill-personal">Internship Market Access</span>
+        <span class="ak-pill ak-pill-personal">Hillel Presence</span>
+      </div>
+    </div>
+    <div class="ak-section">
+      <div class="ak-section-label">Optional · values-based parameters<span class="ak-section-count">opt in</span></div>
+      <div class="ak-toggles">
+        <div class="ak-toggle ak-toggle-on">
+          <div class="ak-switch ak-switch-on"></div>
+          <div class="ak-toggle-info">
+            <div class="ak-toggle-title">DEI Policy & Institutional Commitment</div>
+            <div class="ak-toggle-desc">Published DEI policy, institutional staffing, program investment.</div>
+            <div class="ak-followup">
+              <div class="ak-followup-q">How much weight should this carry?</div>
+              <div class="ak-weight-row">
+                <div class="ak-weight-track"><div class="ak-weight-fill"></div></div>
+                <span class="ak-weight-val">5 / 10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ak-toggle">
+          <div class="ak-switch"></div>
+          <div class="ak-toggle-info">
+            <div class="ak-toggle-title">LGBTQ+ Campus Climate & Support</div>
+            <div class="ak-toggle-desc">Campus Pride Index rating, gender-neutral housing, support resources.</div>
+          </div>
+        </div>
+        <div class="ak-toggle">
+          <div class="ak-switch"></div>
+          <div class="ak-toggle-info">
+            <div class="ak-toggle-title">Campus Political & Ideological Climate</div>
+            <div class="ak-toggle-desc">Student political activity, speech climate, ideological balance.</div>
+          </div>
+        </div>
+        <div class="ak-toggle">
+          <div class="ak-switch"></div>
+          <div class="ak-toggle-info">
+            <div class="ak-toggle-title">Sustainability & Environmental Commitment</div>
+            <div class="ak-toggle-desc">AASHE STARS rating, climate commitments, sustainability infrastructure.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ak-actions">
+      <button class="ak-back">← Back</button>
+      <button class="ak-next">Generate My School List →</button>
+    </div>
+  </div>
+</div>`,
+  },
+  {
+    label: 'School List & Composition',
+    caption:
+      "Personalized probability estimates from each school's 25th/75th percentile data — not acceptance rates. Risk tolerance score drives the recommended safeties/targets/reaches mix before any specific schools are suggested. Profile completeness tracked field-by-field with Provided / Estimated / Missing flags.",
+    html: `
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .ak-wrap { background: #fff; border-radius: 12px; overflow: hidden; font-family: -apple-system, 'Segoe UI', sans-serif; color: #1a1a1a; max-width: 780px; margin: 0 auto; border: 1px solid #e8eef3; }
+  .ak-header { background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); border-bottom: 1px solid #e8eef3; padding: 22px 28px 18px; }
+  .ak-brand { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .ak-logo-wrap { display: flex; align-items: center; gap: 8px; }
+  .ak-logo-mark { display: inline-block; width: 20px; height: 20px; background: #1C75BC; border-radius: 5px; position: relative; }
+  .ak-logo-mark::after { content: 'A'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; font-family: Arial, sans-serif; }
+  .ak-logo { font-weight: 700; font-size: 16px; color: #1C75BC; letter-spacing: -0.3px; }
+  .ak-tabs { display: flex; gap: 4px; }
+  .ak-tab { padding: 5px 12px; background: transparent; border: 1px solid transparent; font-size: 11px; color: #64748b; border-radius: 5px; }
+  .ak-tab-active { background: #1C75BC; color: #fff; font-weight: 600; }
+  .ak-page-title { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-top: 4px; }
+  .ak-page-sub { font-size: 12px; color: #64748b; margin-top: 3px; line-height: 1.5; }
+  .ak-body { padding: 22px 28px 24px; }
+  .ak-rec-card { background: linear-gradient(135deg, #1C75BC 0%, #185FA5 100%); border-radius: 12px; padding: 18px 22px; margin-bottom: 18px; color: #fff; }
+  .ak-rec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; margin-bottom: 4px; }
+  .ak-rec-title { font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+  .ak-rec-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+  .ak-rec-bucket { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px 12px; }
+  .ak-rec-num { font-size: 26px; font-weight: 800; line-height: 1; }
+  .ak-rec-bucket-label { font-size: 9px; opacity: 0.95; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 5px; font-weight: 600; }
+  .ak-rec-foot { font-size: 11px; opacity: 0.92; line-height: 1.5; }
+  .ak-completeness { background: #f8fafc; border: 1px solid #e8eef3; border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; }
+  .ak-comp-title { font-size: 11px; font-weight: 600; color: #475569; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .ak-comp-row { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: #475569; }
+  .ak-flag { display: inline-flex; align-items: center; gap: 6px; }
+  .ak-flag-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .ak-flag-prov { background: #10b981; }
+  .ak-flag-est { background: #f59e0b; }
+  .ak-flag-mis { background: #cbd5e1; }
+  .ak-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; font-weight: 700; margin-bottom: 10px; }
+  .ak-school { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border: 1px solid #e8eef3; border-radius: 9px; margin-bottom: 7px; }
+  .ak-tier { font-size: 9px; padding: 3px 8px; border-radius: 3px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0; }
+  .ak-tier-safe { background: #d1fae5; color: #047857; }
+  .ak-tier-target { background: #dbeafe; color: #1e40af; }
+  .ak-tier-reach { background: #fee2e2; color: #b91c1c; }
+  .ak-school-info { flex: 1; }
+  .ak-school-name { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+  .ak-school-meta { font-size: 11px; color: #64748b; margin-top: 1px; }
+  .ak-school-prob { font-size: 14px; font-weight: 800; color: #1a1a1a; text-align: right; }
+  .ak-school-prob-label { font-size: 9px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; }
+</style>
+<div class="ak-wrap">
+  <div class="ak-header">
+    <div class="ak-brand">
+      <div class="ak-logo-wrap"><span class="ak-logo-mark"></span><span class="ak-logo">AdmitKit Discovery</span></div>
+      <div class="ak-tabs">
+        <button class="ak-tab">Profile</button>
+        <button class="ak-tab ak-tab-active">My List</button>
+        <button class="ak-tab">Schools</button>
+      </div>
+    </div>
+    <div class="ak-page-title">Your School List</div>
+    <div class="ak-page-sub">Personalized estimates from each school's 25th/75th percentile data. Risk score: 3 of 5 (balanced).</div>
+  </div>
+  <div class="ak-body">
+    <div class="ak-rec-card">
+      <div class="ak-rec-label">Recommended composition</div>
+      <div class="ak-rec-title">For 15 applications at Risk Score 3</div>
+      <div class="ak-rec-row">
+        <div class="ak-rec-bucket"><div class="ak-rec-num">3</div><div class="ak-rec-bucket-label">Safeties</div></div>
+        <div class="ak-rec-bucket"><div class="ak-rec-num">6</div><div class="ak-rec-bucket-label">Targets</div></div>
+        <div class="ak-rec-bucket"><div class="ak-rec-num">6</div><div class="ak-rec-bucket-label">Reaches</div></div>
+      </div>
+      <div class="ak-rec-foot">A balanced mix. Anxiety pulls most students toward safety-heavy lists. Your reaches are where the upside lives.</div>
+    </div>
+    <div class="ak-completeness">
+      <div class="ak-comp-title">Profile completeness · 19 fields</div>
+      <div class="ak-comp-row">
+        <span class="ak-flag"><span class="ak-flag-dot ak-flag-prov"></span>Provided · 14</span>
+        <span class="ak-flag"><span class="ak-flag-dot ak-flag-est"></span>Estimated · 4</span>
+        <span class="ak-flag"><span class="ak-flag-dot ak-flag-mis"></span>Missing · 1 (SAT score)</span>
+      </div>
+    </div>
+    <div class="ak-section-label">Top matches · 15 schools</div>
+    <div class="ak-school">
+      <div class="ak-tier ak-tier-safe">Safety</div>
+      <div class="ak-school-info">
+        <div class="ak-school-name">SUNY Cortland</div>
+        <div class="ak-school-meta">Cortland, NY · Public · Sports Mgmt 10/10 · D3 Baseball</div>
+      </div>
+      <div><div class="ak-school-prob">82%</div><div class="ak-school-prob-label">Probability</div></div>
+    </div>
+    <div class="ak-school">
+      <div class="ak-tier ak-tier-target">Target</div>
+      <div class="ak-school-info">
+        <div class="ak-school-name">Ithaca College</div>
+        <div class="ak-school-meta">Ithaca, NY · Private · Sports Mgmt 10/10 · D3 Baseball</div>
+      </div>
+      <div><div class="ak-school-prob">61%</div><div class="ak-school-prob-label">Probability</div></div>
+    </div>
+    <div class="ak-school">
+      <div class="ak-tier ak-tier-target">Target</div>
+      <div class="ak-school-info">
+        <div class="ak-school-name">University of Delaware</div>
+        <div class="ak-school-meta">Newark, DE · Public · Sports Mgmt · Internship Market 9/10</div>
+      </div>
+      <div><div class="ak-school-prob">54%</div><div class="ak-school-prob-label">Probability</div></div>
+    </div>
+    <div class="ak-school">
+      <div class="ak-tier ak-tier-reach">Reach</div>
+      <div class="ak-school-info">
+        <div class="ak-school-name">University of Michigan</div>
+        <div class="ak-school-meta">Ann Arbor, MI · Public · Sports Mgmt 10/10 · Internship Market 10/10</div>
+      </div>
+      <div><div class="ak-school-prob">22%</div><div class="ak-school-prob-label">Probability</div></div>
+    </div>
+  </div>
+</div>`,
+  },
+];
+
 /** Map project IDs to their screenshot arrays */
 export const projectScreenshots: Record<string, Screenshot[]> = {
   cdt: cdtScreenshots,
   cmp: cmpScreenshots,
+  adm: admScreenshots,
 };
