@@ -1,5 +1,6 @@
 /**
- * Set lastUpdated dates on AdmitKit and Compass projects.
+ * Set lastUpdated on all featured projects.
+ * Uses Sanity _updatedAt as default for projects without an explicit date.
  *
  * Usage:
  *   node --env-file=.env.local scripts/set-last-updated.mjs
@@ -15,20 +16,27 @@ const client = createClient({
   token: process.env.SANITY_TOKEN,
 });
 
-const updates = [
-  { id: 'project-adm', date: '2026-04-10', label: 'AdmitKit' },
-  { id: 'project-cmp', date: '2026-04-08', label: 'Compass' },
-];
+// Explicit overrides for projects we know specific dates for
+const explicit = {
+  'project-adm': '2026-04-10', // AdmitKit — created today
+  'project-cmp': '2026-04-08', // Compass — sandbox redesign
+};
 
 async function run() {
-  for (const u of updates) {
-    const doc = await client.getDocument(u.id);
-    if (!doc) {
-      console.log(`  ${u.id}: NOT FOUND, skipping`);
+  const projects = await client.fetch(
+    `*[_type == "project" && featured == true] {_id, title, badgeText, _updatedAt, lastUpdated}`
+  );
+
+  for (const p of projects) {
+    const fallback = p._updatedAt?.slice(0, 10); // YYYY-MM-DD
+    const date = explicit[p._id] || fallback;
+    if (!date) {
+      console.log(`  ${p._id}: no date available, skipping`);
       continue;
     }
-    await client.patch(u.id).set({ lastUpdated: u.date }).commit();
-    console.log(`  ${u.id} (${u.label}): lastUpdated = ${u.date}`);
+    await client.patch(p._id).set({ lastUpdated: date }).commit();
+    const tag = explicit[p._id] ? '(explicit)' : '(from _updatedAt)';
+    console.log(`  ${p.badgeText.padEnd(4)} ${p.title.slice(0, 40).padEnd(40)} -> ${date} ${tag}`);
   }
 }
 
