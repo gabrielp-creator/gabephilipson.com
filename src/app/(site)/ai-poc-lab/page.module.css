@@ -85,6 +85,13 @@
   line-height: 1.6;
 }
 
+.lastUpdated {
+  font-size: 11px;
+  color: var(--color-light);
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
 .cardProblem {
   font-size: 15px;
   line-height: 1.7;

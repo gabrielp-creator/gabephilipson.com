@@ -60,6 +60,7 @@ export async function getProjects() {
     "screenshots": screenshots[].asset->url,
     demoUrl,
     sandboxUrl,
+    lastUpdated,
     order
   }`);
 }

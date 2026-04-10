@@ -25,6 +25,13 @@ interface Project {
   screenshots?: string[];
   demoUrl?: string;
   sandboxUrl?: string;
+  lastUpdated?: string;
+}
+
+function formatLastUpdated(dateStr: string | undefined) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
@@ -71,6 +78,9 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                     )}
                   </div>
                   <div className={styles.cardDesc}>{p.shortDescription}</div>
+                  {p.lastUpdated && (
+                    <div className={styles.lastUpdated}>Last updated: {formatLastUpdated(p.lastUpdated)}</div>
+                  )}
                 </div>
               </div>
               <p className={styles.cardProblem}>{p.problem}</p>

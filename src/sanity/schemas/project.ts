@@ -54,6 +54,7 @@ export const project = defineType({
     }),
     defineField({ name: 'demoUrl', title: 'Demo URL', type: 'url' }),
     defineField({ name: 'sandboxUrl', title: 'Sandbox URL', type: 'url' }),
+    defineField({ name: 'lastUpdated', title: 'Last Updated', type: 'date' }),
     defineField({ name: 'order', title: 'Display Order', type: 'number' }),
     defineField({ name: 'featured', title: 'Featured', type: 'boolean', initialValue: true }),
   ],
