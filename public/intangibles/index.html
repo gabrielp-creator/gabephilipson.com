@@ -21,7 +21,7 @@
     --mets-orange-soft: #FFE8DD;
     --charcoal: #2D2D34;
     --charcoal-soft: #4A4A54;
-    --alarm: #8B1A1A;
+    --alarm: #FF5910;
     --money: #1F5E3A;
     --neutral: #6B6658;
   }
@@ -105,7 +105,7 @@
   .dek {
     text-align: center;
     max-width: 760px;
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
     font-family: 'Fraunces', serif;
     font-size: clamp(16px, 2vw, 20px);
     font-weight: 400;
@@ -121,7 +121,7 @@
     text-transform: uppercase;
     color: var(--mets-orange);
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -141,7 +141,7 @@
     border-top: none;
     background: var(--paper);
     padding: 8px 16px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -215,7 +215,7 @@
     border-right: 3px solid var(--mets-orange);
     background: var(--paper-dim);
     padding: 20px 28px 30px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     position: relative;
     min-height: 120px;
     display: flex;
@@ -327,9 +327,9 @@
 
   .presets {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
   .preset {
     border: 1px solid var(--mets-blue);
@@ -359,34 +359,12 @@
   .preset.active .p-title { color: var(--paper); }
   .preset.active .p-sub { color: var(--mets-orange-soft); }
 
-  .preset-groups { margin-bottom: 32px; }
-  .preset-group-label {
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--mets-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--mets-blue-soft, rgba(0,45,114,0.15));
-  }
-  .preset-group .presets { margin-bottom: 0; }
-
-  @media (min-width: 768px) {
-    .presets-pager { display: none; }
-    #presets { display: none; }
-    .preset-group:not(:last-child) { margin-bottom: 24px; }
-  }
-  @media (max-width: 767px) {
-    .preset-groups { display: none; }
-  }
 
   .controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
   @media (max-width: 880px) { .controls { grid-template-columns: 1fr; } }
 
@@ -511,7 +489,7 @@
     border: 3px double var(--mets-blue);
     background: var(--paper);
     padding: 32px 24px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
   .verdict-grid {
     display: grid;
@@ -595,7 +573,7 @@
     gap: 0;
     border: 1px solid var(--mets-blue);
     background: var(--paper);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
   .eff-cell {
     padding: 18px 20px;
@@ -739,7 +717,7 @@
     gap: 0;
     border: 1px solid var(--mets-blue);
     background: var(--paper);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
   .ledger-side { padding: 20px; }
   .ledger-side.out { border-right: 1px solid var(--mets-blue); }
@@ -786,7 +764,7 @@
     .ledger-side.out { border-right: none; border-bottom: 1px solid var(--mets-blue); }
   }
 
-  .model-section { margin-bottom: 32px; }
+  .model-section { margin-bottom: 20px; }
   .model-toggle {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -996,20 +974,10 @@
   <div class="section-label">Preset Archetypes — click to load</div>
   <div class="presets-pager">
     <button class="preset-nav" id="preset-prev" aria-label="Previous page">◂ PREV</button>
-    <div class="preset-page-title" id="preset-page-title">Team Archetypes <span class="page-num">1 / 2</span></div>
+    <div class="preset-page-title" id="preset-page-title"><span class="page-num">1 / 4</span></div>
     <button class="preset-nav" id="preset-next" aria-label="Next page">NEXT ▸</button>
   </div>
   <div class="presets" id="presets"></div>
-  <div class="preset-groups">
-    <div class="preset-group">
-      <div class="preset-group-label">Team Archetypes</div>
-      <div class="presets" data-group="team"></div>
-    </div>
-    <div class="preset-group">
-      <div class="preset-group-label">Over &amp; Underperformers</div>
-      <div class="presets" data-group="over-under"></div>
-    </div>
-  </div>
 
   <div class="section-label">Output · The Prediction</div>
   <div class="verdict">
@@ -1215,7 +1183,7 @@
   ];
 
   const PRESETS = [
-    { id: 'mets2026', group: 'team', title: '2026 Mets', sub: 'The Stearns Rebuild · pace 52-110',
+    { id: 'mets2026', title: '2026 Mets', sub: 'The Stearns Rebuild · pace 52-110',
       data: {
         hitterWAR: 14, pitcherWAR: 12,
         alpha: { chemistry: 5, leadership: 3, favorites: 3, crowd: 8, clutch: 5, mascot: 15, curse: 20 },
@@ -1226,7 +1194,7 @@
         pctLabel: 'BOTTOM 1%', pctDesc: 'Historically inefficient', pctClass: 'bad', pctMarker: 97
       }
     },
-    { id: 'mets2024', group: 'team', title: '2024 Mets', sub: 'The Grimace NLCS Run · 89-73',
+    { id: 'mets2024', title: '2024 Mets', sub: 'The Grimace NLCS Run · 89-73',
       data: {
         hitterWAR: 18, pitcherWAR: 14,
         alpha: { chemistry: 65, leadership: 60, favorites: 80, crowd: 70, clutch: 60, mascot: 80, curse: 55 },
@@ -1237,7 +1205,7 @@
         pctLabel: 'BOTTOM 25%', pctDesc: 'Pricey but productive', pctClass: 'bad', pctMarker: 75
       }
     },
-    { id: 'as2002', group: 'team', title: "2002 Moneyball A's", sub: 'Peak Quant Era · 103-59',
+    { id: 'as2002', title: "2002 Moneyball A's", sub: 'Peak Quant Era · 103-59',
       data: {
         hitterWAR: 25, pitcherWAR: 22,
         alpha: { chemistry: 65, leadership: 75, favorites: 55, crowd: 60, clutch: 80, mascot: 55, curse: 60 },
@@ -1248,7 +1216,7 @@
         pctLabel: 'TOP 1%', pctDesc: 'Legendary efficiency', pctClass: 'good', pctMarker: 2
       }
     },
-    { id: 'royals2015', group: 'team', title: '2015 Royals', sub: 'Vibes Win Championships · 95-67',
+    { id: 'royals2015', title: '2015 Royals', sub: 'Vibes Win Championships · 95-67',
       data: {
         hitterWAR: 16, pitcherWAR: 14,
         alpha: { chemistry: 90, leadership: 85, favorites: 75, crowd: 90, clutch: 95, mascot: 60, curse: 80 },
@@ -1259,7 +1227,7 @@
         pctLabel: 'TOP 25%', pctDesc: 'Champagne on a budget', pctClass: 'good', pctMarker: 22
       }
     },
-    { id: 'allbeta', group: 'team', title: 'All Quant, No Heart', sub: "The Spreadsheet's Dream",
+    { id: 'allbeta', title: 'All Quant, No Heart', sub: "The Spreadsheet's Dream",
       data: {
         hitterWAR: 30, pitcherWAR: 25,
         alpha: { chemistry: 5, leadership: 5, favorites: 5, crowd: 5, clutch: 5, mascot: 5, curse: 5 },
@@ -1270,7 +1238,7 @@
         pctLabel: 'N/A', pctDesc: 'No payroll for thought experiments', pctClass: 'na', pctMarker: 50
       }
     },
-    { id: 'allalpha', group: 'team', title: 'All Heart, No Talent', sub: 'Pure Hopes & Dreams',
+    { id: 'allalpha', title: 'All Heart, No Talent', sub: 'Pure Hopes & Dreams',
       data: {
         hitterWAR: 8, pitcherWAR: 6,
         alpha: { chemistry: 95, leadership: 95, favorites: 95, crowd: 95, clutch: 95, mascot: 95, curse: 95 },
@@ -1281,8 +1249,7 @@
         pctLabel: 'N/A', pctDesc: 'No payroll for thought experiments', pctClass: 'na', pctMarker: 50
       }
     },
-    // ========== PAGE 2: Over/Underperformers vs fWAR ==========
-    { id: 'mets1969', group: 'over-under', title: '1969 Miracle Mets', sub: 'Divine intervention · 100-62',
+    { id: 'mets1969', title: '1969 Miracle Mets', sub: 'Divine intervention · 100-62',
       data: {
         hitterWAR: 12, pitcherWAR: 16,
         alpha: { chemistry: 100, leadership: 100, favorites: 100, crowd: 100, clutch: 100, mascot: 90, curse: 90 },
@@ -1293,7 +1260,7 @@
         pctLabel: 'TOP 1%', pctDesc: 'Era-adjusted ~$175K/win today', pctClass: 'good', pctMarker: 1
       }
     },
-    { id: 'rays2008', group: 'over-under', title: '2008 Tampa Bay Rays', sub: 'Worst to First · 97-65',
+    { id: 'rays2008', title: '2008 Tampa Bay Rays', sub: 'Worst to First · 97-65',
       data: {
         hitterWAR: 18, pitcherWAR: 16,
         alpha: { chemistry: 85, leadership: 75, favorites: 80, crowd: 90, clutch: 85, mascot: 60, curse: 80 },
@@ -1304,7 +1271,7 @@
         pctLabel: 'TOP 5%', pctDesc: 'Shoestring pennant', pctClass: 'good', pctMarker: 5
       }
     },
-    { id: 'cubs2016', group: 'over-under', title: '2016 Chicago Cubs', sub: 'Curse Broken · 103-58',
+    { id: 'cubs2016', title: '2016 Chicago Cubs', sub: 'Curse Broken · 103-58',
       data: {
         hitterWAR: 27, pitcherWAR: 20,
         alpha: { chemistry: 65, leadership: 60, favorites: 65, crowd: 70, clutch: 65, mascot: 55, curse: 90 },
@@ -1315,7 +1282,7 @@
         pctLabel: 'AVERAGE', pctDesc: 'Got what they paid for, plus a curse-breaker', pctClass: 'mid', pctMarker: 50
       }
     },
-    { id: 'nats2019', group: 'over-under', title: '2019 Washington Nationals', sub: 'Baby Shark Energy · 93-69',
+    { id: 'nats2019', title: '2019 Washington Nationals', sub: 'Baby Shark Energy · 93-69',
       data: {
         hitterWAR: 20, pitcherWAR: 16,
         alpha: { chemistry: 70, leadership: 75, favorites: 65, crowd: 70, clutch: 75, mascot: 50, curse: 55 },
@@ -1326,7 +1293,7 @@
         pctLabel: 'BOTTOM 40%', pctDesc: 'Champagne paid in advance', pctClass: 'bad', pctMarker: 60
       }
     },
-    { id: 'redsox2012', group: 'over-under', title: '2012 Boston Red Sox', sub: 'Chicken and Beer · 69-93',
+    { id: 'redsox2012', title: '2012 Boston Red Sox', sub: 'Chicken and Beer · 69-93',
       data: {
         hitterWAR: 18, pitcherWAR: 17,
         alpha: { chemistry: 10, leadership: 15, favorites: 25, crowd: 35, clutch: 15, mascot: 50, curse: 50 },
@@ -1337,7 +1304,7 @@
         pctLabel: 'BOTTOM 10%', pctDesc: 'Chicken, beer, broken', pctClass: 'bad', pctMarker: 90
       }
     },
-    { id: 'padres2023', group: 'over-under', title: '2023 San Diego Padres', sub: 'Stars Without Soul · 82-80',
+    { id: 'padres2023', title: '2023 San Diego Padres', sub: 'Stars Without Soul · 82-80',
       data: {
         hitterWAR: 23, pitcherWAR: 19,
         alpha: { chemistry: 25, leadership: 25, favorites: 35, crowd: 50, clutch: 25, mascot: 55, curse: 45 },
@@ -1346,6 +1313,94 @@
         actualDetail: '82-80 · missed playoffs despite elite talent',
         payroll: 250, costPerWin: 3.05,
         pctLabel: 'BOTTOM 20%', pctDesc: 'Stars bought, chemistry forgotten', pctClass: 'bad', pctMarker: 82
+      }
+    },
+    { id: 'mets1962', title: '1962 Mets', sub: 'Inaugural Disaster, 40-120',
+      data: {
+        hitterWAR: 3, pitcherWAR: 2,
+        alpha: { chemistry: 20, leadership: 15, favorites: 55, crowd: 65, clutch: 10, mascot: 60, curse: 5 },
+        actualWins: 40,
+        actualLabel: '1962 Actual Wins',
+        actualDetail: '40-120, 60.5 games back',
+        payroll: 1.1, costPerWin: 0.03,
+        pctLabel: 'BOTTOM 5%', pctDesc: 'Historically catastrophic', pctClass: 'bad', pctMarker: 95
+      }
+    },
+    { id: 'yankees1998', title: '1998 Yankees', sub: 'Peak Dynasty, 114-48',
+      data: {
+        hitterWAR: 35, pitcherWAR: 25,
+        alpha: { chemistry: 95, leadership: 98, favorites: 90, crowd: 92, clutch: 95, mascot: 85, curse: 95 },
+        actualWins: 114,
+        actualLabel: '1998 Actual Wins',
+        actualDetail: '114-48, World Series champions',
+        payroll: 73, costPerWin: 0.64,
+        pctLabel: 'TOP 5%', pctDesc: 'Historically dominant', pctClass: 'good', pctMarker: 5
+      }
+    },
+    { id: 'orioles2023', title: '2023 Orioles', sub: 'The Quiet Rebuild, 101-61',
+      data: {
+        hitterWAR: 25, pitcherWAR: 15,
+        alpha: { chemistry: 80, leadership: 75, favorites: 65, crowd: 70, clutch: 70, mascot: 55, curse: 60 },
+        actualWins: 101,
+        actualLabel: '2023 Actual Wins',
+        actualDetail: '101-61, AL East champions, bottom-5 payroll',
+        payroll: 60, costPerWin: 0.59,
+        pctLabel: 'TOP 10%', pctDesc: 'Remarkably efficient', pctClass: 'good', pctMarker: 10
+      }
+    },
+    { id: 'spreadsheet', title: 'The Spreadsheet Actually Worked', sub: 'Pure quant, all wins',
+      data: {
+        hitterWAR: 30, pitcherWAR: 25,
+        alpha: { chemistry: 0, leadership: 0, favorites: 0, crowd: 0, clutch: 0, mascot: 0, curse: 0 },
+        actualWins: 104,
+        actualLabel: 'Projected Wins',
+        actualDetail: 'The model is never wrong, and it never happened',
+        payroll: null, costPerWin: null,
+        pctLabel: 'HYPOTHETICAL', pctDesc: 'Theory only', pctClass: 'na', pctMarker: 40
+      }
+    },
+    { id: 'redsox2011', title: '2011 Boston Red Sox', sub: 'September Collapse, 90-72',
+      data: {
+        hitterWAR: 30, pitcherWAR: 15,
+        alpha: { chemistry: 15, leadership: 20, favorites: 55, crowd: 60, clutch: 15, mascot: 45, curse: 30 },
+        actualWins: 90,
+        actualLabel: '2011 Actual Wins',
+        actualDetail: 'Led wild card by 9 games on September 1, missed playoffs',
+        payroll: 161, costPerWin: 1.79,
+        pctLabel: 'BOTTOM 20%', pctDesc: 'Memorable underperformers', pctClass: 'bad', pctMarker: 80
+      }
+    },
+    { id: 'giants2021', title: '2021 SF Giants', sub: 'The 107 Nobody Predicted',
+      data: {
+        hitterWAR: 30, pitcherWAR: 20,
+        alpha: { chemistry: 88, leadership: 85, favorites: 70, crowd: 75, clutch: 85, mascot: 60, curse: 70 },
+        actualWins: 107,
+        actualLabel: '2021 Actual Wins',
+        actualDetail: '107-55, PECOTA projected 75',
+        payroll: 149, costPerWin: 1.39,
+        pctLabel: 'TOP 5%', pctDesc: 'Shocked the projections', pctClass: 'good', pctMarker: 5
+      }
+    },
+    { id: 'mets1986', title: '1986 Mets', sub: 'Buckner Ball, 108-54',
+      data: {
+        hitterWAR: 28, pitcherWAR: 22,
+        alpha: { chemistry: 85, leadership: 80, favorites: 80, crowd: 90, clutch: 95, mascot: 75, curse: 88 },
+        actualWins: 108,
+        actualLabel: '1986 Actual Wins',
+        actualDetail: '108-54, World Series champions',
+        payroll: 19, costPerWin: 0.18,
+        pctLabel: 'TOP 5%', pctDesc: 'Championship swagger', pctClass: 'good', pctMarker: 5
+      }
+    },
+    { id: 'tigers2006', title: '2006 Tigers', sub: 'Worst to Pennant in Three Years, 95-67',
+      data: {
+        hitterWAR: 22, pitcherWAR: 20,
+        alpha: { chemistry: 82, leadership: 90, favorites: 65, crowd: 70, clutch: 78, mascot: 55, curse: 60 },
+        actualWins: 95,
+        actualLabel: '2006 Actual Wins',
+        actualDetail: '95-67, AL pennant, lost World Series to Cardinals',
+        payroll: 83, costPerWin: 0.87,
+        pctLabel: 'TOP 15%', pctDesc: 'Best improvement in decades', pctClass: 'good', pctMarker: 15
       }
     }
   ];
@@ -1607,64 +1662,45 @@
     }
   }
 
-  const presetMql = window.matchMedia('(min-width: 768px)');
-  const MOBILE_PAGES = [
-    { group: 'team',       pageWithinGroup: 1, title: 'Team Archetypes',        totalInGroup: 2 },
-    { group: 'team',       pageWithinGroup: 2, title: 'Team Archetypes',        totalInGroup: 2 },
-    { group: 'over-under', pageWithinGroup: 1, title: 'Over & Underperformers', totalInGroup: 2 },
-    { group: 'over-under', pageWithinGroup: 2, title: 'Over & Underperformers', totalInGroup: 2 }
-  ];
-  const MOBILE_PER_PAGE = 4;
-  let mobilePageIdx = 0;
+  const desktopQuery = window.matchMedia('(min-width: 768px)');
+  let currentPage = 1;
 
-  function presetButtonHtml(p) {
-    return `<button class="preset" data-id="${p.id}">
-        <div class="p-title">${p.title}</div>
-        <div class="p-sub">${p.sub}</div>
-      </button>`;
-  }
-
-  function bindPresetButtons(root) {
-    root.querySelectorAll('.preset').forEach(btn => {
-      btn.addEventListener('click', () => loadPreset(btn.dataset.id));
-      if (btn.dataset.id === STATE.activePresetId) btn.classList.add('active');
-    });
-  }
-
-  function renderDesktopPresets() {
-    document.querySelectorAll('.preset-group .presets').forEach(host => {
-      const group = host.dataset.group;
-      const items = PRESETS.filter(p => p.group === group);
-      host.innerHTML = items.map(presetButtonHtml).join('');
-      bindPresetButtons(host);
-    });
-  }
-
-  function renderMobilePresets() {
-    const host = $('presets');
-    const meta = MOBILE_PAGES[mobilePageIdx];
-    const inGroup = PRESETS.filter(p => p.group === meta.group);
-    const start = (meta.pageWithinGroup - 1) * MOBILE_PER_PAGE;
-    const items = inGroup.slice(start, start + MOBILE_PER_PAGE);
-    host.innerHTML = items.map(presetButtonHtml).join('');
-    bindPresetButtons(host);
-    $('preset-page-title').innerHTML = `${meta.title} <span class="page-num">${meta.pageWithinGroup} / ${meta.totalInGroup}</span>`;
-  }
+  function getPageSize() { return desktopQuery.matches ? 5 : 4; }
+  function getTotalPages() { return Math.ceil(PRESETS.length / getPageSize()); }
 
   function renderPresets() {
-    if (presetMql.matches) {
-      renderDesktopPresets();
-    } else {
-      renderMobilePresets();
-    }
+    const host = $('presets');
+    const pageSize = getPageSize();
+    const start = (currentPage - 1) * pageSize;
+    const pagePresets = PRESETS.slice(start, start + pageSize);
+    host.innerHTML = pagePresets.map(p => `
+      <button class="preset" data-id="${p.id}">
+        <div class="p-title">${p.title}</div>
+        <div class="p-sub">${p.sub}</div>
+      </button>
+    `).join('');
+    host.querySelectorAll('.preset').forEach(btn => {
+      btn.addEventListener('click', () => loadPreset(btn.dataset.id));
+    });
+    pagePresets.forEach(p => {
+      const btn = host.querySelector(`.preset[data-id="${p.id}"]`);
+      if (btn && p.id === STATE.activePresetId) btn.classList.add('active');
+    });
+    $('preset-page-title').innerHTML = `<span class="page-num">${currentPage} / ${getTotalPages()}</span>`;
   }
 
   function changePresetPage(direction) {
-    mobilePageIdx = (mobilePageIdx + direction + MOBILE_PAGES.length) % MOBILE_PAGES.length;
+    const total = getTotalPages();
+    currentPage = currentPage + direction;
+    if (currentPage > total) currentPage = 1;
+    if (currentPage < 1) currentPage = total;
     renderPresets();
   }
 
-  presetMql.addEventListener('change', renderPresets);
+  desktopQuery.addEventListener('change', () => {
+    currentPage = 1;
+    renderPresets();
+  });
 
   function loadPreset(id) {
     const p = PRESETS.find(x => x.id === id);
