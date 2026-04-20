@@ -76,6 +76,17 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                         &#9654; Live Sandbox
                       </a>
                     )}
+                    {p.demoUrl && (
+                      <a
+                        href={p.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.demoLink}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        &#9654; Live Project
+                      </a>
+                    )}
                   </div>
                   <div className={styles.cardDesc}>{p.shortDescription}</div>
                   {p.lastUpdated && (

@@ -79,6 +79,22 @@
   color: #fff;
 }
 
+.demoLink {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  color: #fff;
+  white-space: nowrap;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.demoLink:hover {
+  background: var(--color-primary-light);
+}
+
 .cardDesc {
   font-size: 13px;
   color: var(--color-muted);
