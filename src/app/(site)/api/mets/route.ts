@@ -53,7 +53,7 @@ export async function GET() {
       },
       {
         headers: {
-          'Cache-Control': 's-maxage=86400, stale-while-revalidate=172800',
+          'Cache-Control': 's-maxage=1800, stale-while-revalidate=86400',
         },
       }
     );
