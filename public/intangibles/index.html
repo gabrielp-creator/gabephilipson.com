@@ -638,11 +638,11 @@
   .eff-bar {
     height: 14px;
     background: linear-gradient(to right,
-      var(--money) 0%,
-      var(--money) 25%,
+      var(--alarm) 0%,
+      var(--alarm) 25%,
       var(--neutral) 50%,
-      var(--alarm) 75%,
-      var(--alarm) 100%);
+      var(--money) 75%,
+      var(--money) 100%);
     border: 1px solid var(--ink);
     position: relative;
     opacity: 0.25;
@@ -746,22 +746,135 @@
   .ledger-side ul { list-style: none; }
   .ledger-side li {
     display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px 0;
     border-bottom: 1px dashed var(--rule);
     font-size: 13px;
     font-variant-numeric: tabular-nums;
   }
   .ledger-side li:last-child { border-bottom: none; }
-  .ledger-side li .pname { font-weight: 500; }
+  .ledger-side li .pname {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--mets-blue);
+  }
   .ledger-side li .pmeta {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: var(--neutral);
+    line-height: 1.4;
+  }
+  .ledger-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .pwar {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .pwar.pos { color: var(--money); background: rgba(31, 94, 58, 0.08); }
+  .pwar.neg { color: var(--alarm); background: rgba(255, 89, 16, 0.10); }
+  .pwar.neu { color: var(--neutral); background: rgba(107, 102, 88, 0.10); }
+  .pwar.big { font-size: 14px; padding: 4px 10px; }
+  .ledger-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding-top: 10px;
+    margin-top: 8px;
+    border-top: 2px solid var(--mets-blue);
+  }
+  .ledger-total-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mets-blue);
+    font-weight: 700;
+  }
+  .ledger-asof {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--neutral);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .ledger-net {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) auto minmax(220px, 2fr);
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--mets-blue);
+    background: var(--paper);
+  }
+  .ledger-net-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mets-blue);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .ledger-net-sub {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--neutral);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .ledger-net-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 42px;
+    color: var(--alarm);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .ledger-net-unit {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--alarm);
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .ledger-net-commentary {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .ledger-net-commentary strong {
+    font-style: normal;
+    color: var(--alarm);
+    font-weight: 700;
   }
   @media (max-width: 700px) {
     .ledger { grid-template-columns: 1fr; }
     .ledger-side.out { border-right: none; border-bottom: 1px solid var(--mets-blue); }
+    .ledger-net {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      text-align: left;
+    }
   }
 
   .model-section { margin-bottom: 20px; }
@@ -865,6 +978,10 @@
   .colophon-top .credit {
     color: var(--mets-blue);
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
   }
   .colophon-top .credit a {
     color: var(--mets-orange);
@@ -876,6 +993,38 @@
     color: var(--mets-orange-deep);
     border-bottom-color: var(--mets-orange-deep);
     border-bottom-style: solid;
+  }
+  .visit-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 14px;
+    border-left: 1px solid var(--rule);
+  }
+  .visit-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--neutral);
+    font-weight: 400;
+  }
+  .visit-counter a {
+    display: inline-flex;
+    border-bottom: none;
+    text-decoration: none;
+  }
+  .visit-counter a:hover { border-bottom: none; }
+  .visit-pixel {
+    height: 14px;
+    width: auto;
+    display: block;
+    filter: grayscale(1) contrast(1.2);
+    opacity: 0.85;
+    transition: filter 0.15s, opacity 0.15s;
+  }
+  .visit-counter a:hover .visit-pixel {
+    filter: none;
+    opacity: 1;
   }
   .colophon-top .right { text-align: right; }
   .colophon-methodology {
@@ -1022,12 +1171,12 @@
       <div class="eff-label">Efficiency Spectrum</div>
       <div class="eff-bar-wrap">
         <div class="eff-bar">
-          <div class="eff-bar-marker" id="e-marker" style="left: 97%;"></div>
+          <div class="eff-bar-marker" id="e-marker" style="left: 3%;"></div>
         </div>
         <div class="eff-bar-scale">
-          <span>2002 A'S</span>
-          <span>LEAGUE AVG</span>
           <span>2026 METS</span>
+          <span>LEAGUE AVG</span>
+          <span>2002 A'S</span>
         </div>
       </div>
     </div>
@@ -1059,29 +1208,111 @@
     </div>
   </div>
 
-  <div class="section-label">The Intangibles Ledger — 2026 Offseason</div>
+  <div class="section-label">The Intangibles Ledger — 2026 Offseason <span class="ledger-asof">Season stats as of 4/22</span></div>
   <div class="ledger">
     <div class="ledger-side out">
       <h4>Given Away <span class="tag">α Drained</span></h4>
       <ul>
-        <li><span class="pname">Pete Alonso</span><span class="pmeta">1B · 7 yrs · fan favorite</span></li>
-        <li><span class="pname">Edwin Díaz</span><span class="pmeta">CL · iconic trumpet entrance</span></li>
-        <li><span class="pname">Brandon Nimmo</span><span class="pmeta">OF · 15 yrs in organization</span></li>
-        <li><span class="pname">Jeff McNeil</span><span class="pmeta">2B · homegrown · "Flying Squirrel"</span></li>
-        <li><span class="pname">Starling Marte</span><span class="pmeta">OF · veteran presence</span></li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Brandon Nimmo</span>
+            <span class="pwar pos">+0.9</span>
+          </div>
+          <span class="pmeta">CF · Texas · .389 / .463 / .556 · raking in leadoff</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Edwin Díaz</span>
+            <span class="pwar pos">+0.3</span>
+          </div>
+          <span class="pmeta">CL · Dodgers · 3/3 in saves for the defending champs</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Pete Alonso</span>
+            <span class="pwar neu">+0.1</span>
+          </div>
+          <span class="pmeta">1B · Baltimore · .229 / .308 / .343 · 1 HR</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Starling Marte</span>
+            <span class="pwar neu">+0.0</span>
+          </div>
+          <span class="pmeta">OF · Kansas City · part-time, $1M deal at age 37</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Jeff McNeil</span>
+            <span class="pwar neg">−0.2</span>
+          </div>
+          <span class="pmeta">2B · Oakland · .174 / .269 / .174 · 0 XBH</span>
+        </li>
       </ul>
+      <div class="ledger-total">
+        <span class="ledger-total-label">Total α Drained</span>
+        <span class="pwar pos big">+1.1</span>
+      </div>
     </div>
     <div class="ledger-side in">
       <h4>Acquired <span class="tag">β Added</span></h4>
       <ul>
-        <li><span class="pname">Bo Bichette</span><span class="pmeta">IF · 3 yr / $126M</span></li>
-        <li><span class="pname">Jorge Polanco</span><span class="pmeta">IF · contact profile</span></li>
-        <li><span class="pname">Devin Williams</span><span class="pmeta">CL · metrics upside</span></li>
-        <li><span class="pname">Marcus Semien</span><span class="pmeta">2B · defensive flex</span></li>
-        <li><span class="pname">Luis Robert Jr.</span><span class="pmeta">CF · trade: Acuña, Pauley</span></li>
-        <li><span class="pname">Freddy Peralta</span><span class="pmeta">SP · trade: Sproat, Williams</span></li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Luis Robert Jr.</span>
+            <span class="pwar pos">+0.4</span>
+          </div>
+          <span class="pmeta">CF · The one that's working · 6 RBI, 8 BB</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Freddy Peralta</span>
+            <span class="pwar pos">+0.2</span>
+          </div>
+          <span class="pmeta">SP · rotation anchor · mixed but functional</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Bo Bichette</span>
+            <span class="pwar neg">−0.1</span>
+          </div>
+          <span class="pmeta">3B · .228 / .271 / .304 · 43% chase rate · booed</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Devin Williams</span>
+            <span class="pwar neg">−0.2</span>
+          </div>
+          <span class="pmeta">CL · two blown saves in a week · vibes: bad</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Marcus Semien</span>
+            <span class="pwar neg">−0.3</span>
+          </div>
+          <span class="pmeta">2B · .194 / .257 / .269 · age-36 decline live</span>
+        </li>
+        <li>
+          <div class="ledger-row-top">
+            <span class="pname">Jorge Polanco</span>
+            <span class="pwar neg">−0.4</span>
+          </div>
+          <span class="pmeta">DH · .179 / .246 / .286 · Achilles injury · cannot play 1B</span>
+        </li>
       </ul>
+      <div class="ledger-total">
+        <span class="ledger-total-label">Total β Added</span>
+        <span class="pwar neg big">−0.4</span>
+      </div>
     </div>
+  </div>
+  <div class="ledger-net">
+    <div class="ledger-net-label">
+      Net Trade Differential
+      <span class="ledger-net-sub">acquired minus given away</span>
+    </div>
+    <div class="ledger-net-num">−1.5 <span class="ledger-net-unit">fWAR</span></div>
+    <div class="ledger-net-commentary">The new guys are worth <strong>1.5 wins less</strong> than the guys who left. Through 23 games, Stearns's rebuild has produced a net-negative roster. Add in the intangibles (clubhouse, crowd, fan favorite equity) and the model's implied swing is far worse.</div>
   </div>
 
   <div class="model-section">
@@ -1135,7 +1366,15 @@
 
   <footer class="colophon">
     <div class="colophon-top">
-      <div class="credit">A project built by <a href="https://gabephilipson.com" target="_blank" rel="noopener">Gabriel Philipson</a></div>
+      <div class="credit">
+        A project built by <a href="https://gabephilipson.com" target="_blank" rel="noopener">Gabriel Philipson</a>
+        <span class="visit-counter" title="Total visitors, via GoatCounter">
+          <span class="visit-label">VISITS</span>
+          <a href="https://gabep.goatcounter.com" target="_blank" rel="noopener" aria-label="View visitor stats">
+            <img src="https://gabep.goatcounter.com/counter/TOTAL.svg?style=total" alt="Total visitors" class="visit-pixel" />
+          </a>
+        </span>
+      </div>
       <div class="right" id="dataStamp">DATA AS OF —</div>
     </div>
     <div class="colophon-methodology">
@@ -1150,9 +1389,9 @@
 
 <script>
   const STATE = {
-    asOf: '2026-04-20',
-    record: { w: 7, l: 15 },
-    streak: 'L 11',
+    asOf: '2026-04-22',
+    record: { w: 7, l: 16 },
+    streak: 'L 12',
     payroll: 381,
     pecota: 89,
     hitterWAR: 14,
@@ -1160,11 +1399,11 @@
     alpha: {
       chemistry: 5, leadership: 3, favorites: 3, crowd: 8, clutch: 5, mascot: 15, curse: 20
     },
-    actualWins: 52,
+    actualWins: 49,
     actualLabel: '2026 Mets Current Pace',
-    actualDetail: 'through 22 games · 7-15',
-    costPerWin: 7.33,
-    pctLabel: 'BOTTOM 1%', pctDesc: 'Historically inefficient', pctClass: 'bad', pctMarker: 97
+    actualDetail: 'through 23 games · 7-16',
+    costPerWin: 7.78,
+    pctLabel: 'BOTTOM 1%', pctDesc: 'Historically inefficient', pctClass: 'bad', pctMarker: 3
   };
 
   const BETA_CONFIG = [
@@ -1183,15 +1422,15 @@
   ];
 
   const PRESETS = [
-    { id: 'mets2026', title: '2026 Mets', sub: 'The Stearns Rebuild · pace 52-110',
+    { id: 'mets2026', title: '2026 Mets', sub: 'The Stearns Rebuild · pace 49-113',
       data: {
         hitterWAR: 14, pitcherWAR: 12,
         alpha: { chemistry: 5, leadership: 3, favorites: 3, crowd: 8, clutch: 5, mascot: 15, curse: 20 },
-        actualWins: 52,
+        actualWins: 49,
         actualLabel: '2026 Mets Current Pace',
-        actualDetail: 'through 22 games · 7-15',
-        payroll: 381, costPerWin: 7.33,
-        pctLabel: 'BOTTOM 1%', pctDesc: 'Historically inefficient', pctClass: 'bad', pctMarker: 97
+        actualDetail: 'through 23 games · 7-16',
+        payroll: 381, costPerWin: 7.78,
+        pctLabel: 'BOTTOM 1%', pctDesc: 'Historically inefficient', pctClass: 'bad', pctMarker: 3
       }
     },
     { id: 'mets2024', title: '2024 Mets', sub: 'The Grimace NLCS Run · 89-73',
@@ -1202,7 +1441,7 @@
         actualLabel: '2024 Mets Final Record',
         actualDetail: '89-73 · lost NLCS to Dodgers',
         payroll: 332, costPerWin: 3.73,
-        pctLabel: 'BOTTOM 25%', pctDesc: 'Pricey but productive', pctClass: 'bad', pctMarker: 75
+        pctLabel: 'BOTTOM 25%', pctDesc: 'Pricey but productive', pctClass: 'bad', pctMarker: 25
       }
     },
     { id: 'as2002', title: "2002 Moneyball A's", sub: 'Peak Quant Era · 103-59',
@@ -1213,7 +1452,7 @@
         actualLabel: "2002 A's Final Record",
         actualDetail: '103-59 · 20-game win streak',
         payroll: 40, costPerWin: 0.39,
-        pctLabel: 'TOP 1%', pctDesc: 'Legendary efficiency', pctClass: 'good', pctMarker: 2
+        pctLabel: 'TOP 1%', pctDesc: 'Legendary efficiency', pctClass: 'good', pctMarker: 98
       }
     },
     { id: 'royals2015', title: '2015 Royals', sub: 'Vibes Win Championships · 95-67',
@@ -1224,7 +1463,7 @@
         actualLabel: '2015 Royals Final Record',
         actualDetail: '95-67 · won World Series',
         payroll: 113, costPerWin: 1.19,
-        pctLabel: 'TOP 25%', pctDesc: 'Champagne on a budget', pctClass: 'good', pctMarker: 22
+        pctLabel: 'TOP 25%', pctDesc: 'Champagne on a budget', pctClass: 'good', pctMarker: 78
       }
     },
     { id: 'allbeta', title: 'All Quant, No Heart', sub: "The Spreadsheet's Dream",
@@ -1257,7 +1496,7 @@
         actualLabel: '1969 Mets Final Record',
         actualDetail: '100-62 · won the World Series',
         payroll: 1.5, costPerWin: 0.02,
-        pctLabel: 'TOP 1%', pctDesc: 'Era-adjusted ~$175K/win today', pctClass: 'good', pctMarker: 1
+        pctLabel: 'TOP 1%', pctDesc: 'Era-adjusted ~$175K/win today', pctClass: 'good', pctMarker: 99
       }
     },
     { id: 'rays2008', title: '2008 Tampa Bay Rays', sub: 'Worst to First · 97-65',
@@ -1268,7 +1507,7 @@
         actualLabel: '2008 Rays Final Record',
         actualDetail: '97-65 · won AL pennant',
         payroll: 44, costPerWin: 0.45,
-        pctLabel: 'TOP 5%', pctDesc: 'Shoestring pennant', pctClass: 'good', pctMarker: 5
+        pctLabel: 'TOP 5%', pctDesc: 'Shoestring pennant', pctClass: 'good', pctMarker: 95
       }
     },
     { id: 'cubs2016', title: '2016 Chicago Cubs', sub: 'Curse Broken · 103-58',
@@ -1290,7 +1529,7 @@
         actualLabel: '2019 Nationals Final Record',
         actualDetail: '93-69 · won the World Series',
         payroll: 205, costPerWin: 2.20,
-        pctLabel: 'BOTTOM 40%', pctDesc: 'Champagne paid in advance', pctClass: 'bad', pctMarker: 60
+        pctLabel: 'BOTTOM 40%', pctDesc: 'Champagne paid in advance', pctClass: 'bad', pctMarker: 40
       }
     },
     { id: 'redsox2012', title: '2012 Boston Red Sox', sub: 'Chicken and Beer · 69-93',
@@ -1301,7 +1540,7 @@
         actualLabel: '2012 Red Sox Final Record',
         actualDetail: '69-93 · Bobby Valentine era implodes',
         payroll: 173, costPerWin: 2.51,
-        pctLabel: 'BOTTOM 10%', pctDesc: 'Chicken, beer, broken', pctClass: 'bad', pctMarker: 90
+        pctLabel: 'BOTTOM 10%', pctDesc: 'Chicken, beer, broken', pctClass: 'bad', pctMarker: 10
       }
     },
     { id: 'padres2023', title: '2023 San Diego Padres', sub: 'Stars Without Soul · 82-80',
@@ -1312,7 +1551,7 @@
         actualLabel: '2023 Padres Final Record',
         actualDetail: '82-80 · missed playoffs despite elite talent',
         payroll: 250, costPerWin: 3.05,
-        pctLabel: 'BOTTOM 20%', pctDesc: 'Stars bought, chemistry forgotten', pctClass: 'bad', pctMarker: 82
+        pctLabel: 'BOTTOM 20%', pctDesc: 'Stars bought, chemistry forgotten', pctClass: 'bad', pctMarker: 18
       }
     },
     { id: 'mets1962', title: '1962 Mets', sub: 'Inaugural Disaster, 40-120',
@@ -1323,7 +1562,7 @@
         actualLabel: '1962 Actual Wins',
         actualDetail: '40-120, 60.5 games back',
         payroll: 1.1, costPerWin: 0.03,
-        pctLabel: 'BOTTOM 5%', pctDesc: 'Historically catastrophic', pctClass: 'bad', pctMarker: 95
+        pctLabel: 'BOTTOM 5%', pctDesc: 'Historically catastrophic', pctClass: 'bad', pctMarker: 5
       }
     },
     { id: 'yankees1998', title: '1998 Yankees', sub: 'Peak Dynasty, 114-48',
@@ -1334,7 +1573,7 @@
         actualLabel: '1998 Actual Wins',
         actualDetail: '114-48, World Series champions',
         payroll: 73, costPerWin: 0.64,
-        pctLabel: 'TOP 5%', pctDesc: 'Historically dominant', pctClass: 'good', pctMarker: 5
+        pctLabel: 'TOP 5%', pctDesc: 'Historically dominant', pctClass: 'good', pctMarker: 95
       }
     },
     { id: 'orioles2023', title: '2023 Orioles', sub: 'The Quiet Rebuild, 101-61',
@@ -1345,7 +1584,7 @@
         actualLabel: '2023 Actual Wins',
         actualDetail: '101-61, AL East champions, bottom-5 payroll',
         payroll: 60, costPerWin: 0.59,
-        pctLabel: 'TOP 10%', pctDesc: 'Remarkably efficient', pctClass: 'good', pctMarker: 10
+        pctLabel: 'TOP 10%', pctDesc: 'Remarkably efficient', pctClass: 'good', pctMarker: 90
       }
     },
     { id: 'spreadsheet', title: 'The Spreadsheet Actually Worked', sub: 'Pure quant, all wins',
@@ -1356,7 +1595,7 @@
         actualLabel: 'Projected Wins',
         actualDetail: 'The model is never wrong, and it never happened',
         payroll: null, costPerWin: null,
-        pctLabel: 'HYPOTHETICAL', pctDesc: 'Theory only', pctClass: 'na', pctMarker: 40
+        pctLabel: 'HYPOTHETICAL', pctDesc: 'Theory only', pctClass: 'na', pctMarker: 60
       }
     },
     { id: 'redsox2011', title: '2011 Boston Red Sox', sub: 'September Collapse, 90-72',
@@ -1367,7 +1606,7 @@
         actualLabel: '2011 Actual Wins',
         actualDetail: 'Led wild card by 9 games on September 1, missed playoffs',
         payroll: 161, costPerWin: 1.79,
-        pctLabel: 'BOTTOM 20%', pctDesc: 'Memorable underperformers', pctClass: 'bad', pctMarker: 80
+        pctLabel: 'BOTTOM 20%', pctDesc: 'Memorable underperformers', pctClass: 'bad', pctMarker: 20
       }
     },
     { id: 'giants2021', title: '2021 SF Giants', sub: 'The 107 Nobody Predicted',
@@ -1378,7 +1617,7 @@
         actualLabel: '2021 Actual Wins',
         actualDetail: '107-55, PECOTA projected 75',
         payroll: 149, costPerWin: 1.39,
-        pctLabel: 'TOP 5%', pctDesc: 'Shocked the projections', pctClass: 'good', pctMarker: 5
+        pctLabel: 'TOP 5%', pctDesc: 'Shocked the projections', pctClass: 'good', pctMarker: 95
       }
     },
     { id: 'mets1986', title: '1986 Mets', sub: 'Buckner Ball, 108-54',
@@ -1389,7 +1628,7 @@
         actualLabel: '1986 Actual Wins',
         actualDetail: '108-54, World Series champions',
         payroll: 19, costPerWin: 0.18,
-        pctLabel: 'TOP 5%', pctDesc: 'Championship swagger', pctClass: 'good', pctMarker: 5
+        pctLabel: 'TOP 5%', pctDesc: 'Championship swagger', pctClass: 'good', pctMarker: 95
       }
     },
     { id: 'tigers2006', title: '2006 Tigers', sub: 'Worst to Pennant in Three Years, 95-67',
@@ -1400,7 +1639,7 @@
         actualLabel: '2006 Actual Wins',
         actualDetail: '95-67, AL pennant, lost World Series to Cardinals',
         payroll: 83, costPerWin: 0.87,
-        pctLabel: 'TOP 15%', pctDesc: 'Best improvement in decades', pctClass: 'good', pctMarker: 15
+        pctLabel: 'TOP 15%', pctDesc: 'Best improvement in decades', pctClass: 'good', pctMarker: 85
       }
     }
   ];
@@ -1414,6 +1653,22 @@
   ];
 
   const QUOTES = [
+    { text: "Our fan base, they're going to let you know when you're not playing well.",
+      who: "Carlos Mendoza", role: "Manager", src: "ESPN · Apr 21, 2026" },
+    { text: "I just expect it to not be the friendliest of welcome back home.",
+      who: "Sean Manaea", role: "SP", src: "ESPN · Apr 21, 2026" },
+    { text: "You wouldn't be here tonight if you weren't a Met fan.",
+      who: "Patrick Heaney", role: "sole fan, Sec. 524", src: "ESPN · Apr 21, 2026" },
+    { text: "Mendy's our guy. He's our leader. He's done a tremendous job. We just haven't executed.",
+      who: "Francisco Lindor", role: "SS", src: "AP · Apr 19, 2026" },
+    { text: "We've just got to stick together and stay within ourself and fight. Fight.",
+      who: "Francisco Lindor", role: "SS", src: "AP · Apr 19, 2026" },
+    { text: "I want them to be pissed.",
+      who: "Carlos Mendoza", role: "Manager", src: "The Athletic · Apr 16, 2026" },
+    { text: "That's a pretty talented position player group that's going to get going. We're going to score runs.",
+      who: "David Stearns", role: "POBO", src: "The Athletic · Apr 16, 2026" },
+    { text: "It's surprising, but we can't explain it. We'll keep on working to figure it out.",
+      who: "Bo Bichette", role: "3B", src: "The Athletic · Apr 16, 2026" },
     { text: "I think Mendy is doing a really good job. I think he's putting our players in position to succeed. He's enormously consistent.",
       who: "David Stearns", role: "POBO", src: "SNY · Apr 17, 2026" },
     { text: "We haven't hit. And when you don't hit, you can look stagnant. I don't think we're stagnant, I think we are playing hard.",
@@ -1494,48 +1749,49 @@
         <circle id="mascot-hand-right" cx="84" cy="108" r="5" fill="#FAFAF5" stroke="#11161F" stroke-width="0.3"/>
         <!-- HEAD (big round baseball) -->
         <circle cx="50" cy="44" r="33" fill="#FAFAF5" stroke="#11161F" stroke-width="0.5"/>
-        <!-- Baseball stitching (classic curve pattern) -->
-        <path d="M 20 38 Q 35 28 50 28" stroke="#C53E08" stroke-width="1.4" fill="none"/>
-        <path d="M 80 38 Q 65 28 50 28" stroke="#C53E08" stroke-width="1.4" fill="none"/>
-        <path d="M 20 52 Q 35 62 50 62" stroke="#C53E08" stroke-width="1.4" fill="none"/>
-        <path d="M 80 52 Q 65 62 50 62" stroke="#C53E08" stroke-width="1.4" fill="none"/>
-        <!-- Individual stitches along the curves -->
-        <g stroke="#C53E08" stroke-width="1.2" stroke-linecap="round">
-          <line x1="22" y1="40" x2="24" y2="36"/>
-          <line x1="28" y1="34" x2="30" y2="31"/>
-          <line x1="36" y1="31" x2="37" y2="27"/>
-          <line x1="44" y1="29" x2="44" y2="26"/>
-          <line x1="76" y1="40" x2="74" y2="36"/>
-          <line x1="70" y1="34" x2="68" y2="31"/>
-          <line x1="62" y1="31" x2="61" y2="27"/>
-          <line x1="54" y1="29" x2="54" y2="26"/>
-          <line x1="22" y1="50" x2="24" y2="54"/>
-          <line x1="28" y1="56" x2="30" y2="59"/>
-          <line x1="36" y1="59" x2="37" y2="63"/>
-          <line x1="44" y1="61" x2="44" y2="64"/>
-          <line x1="76" y1="50" x2="74" y2="54"/>
-          <line x1="70" y1="56" x2="68" y2="59"/>
-          <line x1="62" y1="59" x2="61" y2="63"/>
-          <line x1="54" y1="61" x2="54" y2="64"/>
+        <!-- Baseball stitching: two long curved arcs hugging the sides of the head -->
+        <path d="M 23 30 Q 15 45 20 60 Q 26 72 42 76" stroke="#C53E08" stroke-width="1.3" fill="none"/>
+        <path d="M 77 30 Q 85 45 80 60 Q 74 72 58 76" stroke="#C53E08" stroke-width="1.3" fill="none"/>
+        <!-- V-pair stitch crossmarks along the arcs -->
+        <g stroke="#C53E08" stroke-width="1.2" stroke-linecap="round" fill="none">
+          <line x1="18" y1="34" x2="22" y2="36"/><line x1="22" y1="36" x2="18" y2="37"/>
+          <line x1="15" y1="43" x2="20" y2="44"/><line x1="20" y1="44" x2="15" y2="46"/>
+          <line x1="15" y1="52" x2="20" y2="52"/><line x1="20" y1="52" x2="15" y2="55"/>
+          <line x1="17" y1="61" x2="22" y2="60"/><line x1="22" y1="60" x2="18" y2="63"/>
+          <line x1="22" y1="69" x2="27" y2="67"/><line x1="27" y1="67" x2="24" y2="71"/>
+          <line x1="32" y1="75" x2="36" y2="72"/><line x1="36" y1="72" x2="35" y2="76"/>
+          <line x1="82" y1="34" x2="78" y2="36"/><line x1="78" y1="36" x2="82" y2="37"/>
+          <line x1="85" y1="43" x2="80" y2="44"/><line x1="80" y1="44" x2="85" y2="46"/>
+          <line x1="85" y1="52" x2="80" y2="52"/><line x1="80" y1="52" x2="85" y2="55"/>
+          <line x1="83" y1="61" x2="78" y2="60"/><line x1="78" y1="60" x2="82" y2="63"/>
+          <line x1="78" y1="69" x2="73" y2="67"/><line x1="73" y1="67" x2="76" y2="71"/>
+          <line x1="68" y1="75" x2="64" y2="72"/><line x1="64" y1="72" x2="65" y2="76"/>
         </g>
-        <!-- CAP (Mets blue, proper curve) -->
-        <path d="M 20 30 Q 50 6 80 30 L 80 35 L 20 35 Z" fill="#002D72"/>
-        <!-- Cap button on top -->
-        <circle cx="50" cy="10" r="1.5" fill="#FF5910"/>
+        <!-- CAP (smaller, sits high on upper-left of the head) -->
+        <path d="M 22 20 Q 38 4 58 22 L 60 28 L 20 28 Z" fill="#002D72"/>
+        <!-- Cap button -->
+        <circle cx="38" cy="9" r="1.3" fill="#FF5910"/>
         <!-- Cap brim -->
-        <path d="M 16 36 Q 50 31 84 36 L 84 39 Q 50 34 16 39 Z" fill="#001A42"/>
-        <!-- Interlocking NY on cap (italic serif, Mets-style) -->
-        <text x="50" y="26" font-family="Georgia, serif" font-style="italic" font-weight="900" font-size="13" fill="#FF5910" text-anchor="middle" letter-spacing="-1.5">NY</text>
-        <!-- FACE (dynamic based on charisma slider) -->
-        <g id="mascot-face"></g>
+        <path d="M 17 29 Q 40 25 63 30 L 63 33 Q 40 28 17 32 Z" fill="#001A42"/>
+        <!-- Cap seam detail (two subtle lines from button radiating) -->
+        <path d="M 38 9 Q 36 16 31 26" stroke="#001A42" stroke-width="0.6" fill="none" opacity="0.7"/>
+        <path d="M 38 9 Q 44 16 52 26" stroke="#001A42" stroke-width="0.6" fill="none" opacity="0.7"/>
+        <!-- Interlocking NY on cap -->
+        <text x="40" y="23" font-family="Georgia, serif" font-style="italic" font-weight="900" font-size="11" fill="#FF5910" text-anchor="middle" letter-spacing="-1.3">NY</text>
         <!-- EYEBROWS (always visible, Mr. Met signature) -->
         <g id="mascot-brows">
-          <path d="M 36 41 Q 40 39 44 41" stroke="#11161F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-          <path d="M 56 41 Q 60 39 64 41" stroke="#11161F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M 33 40 Q 39 36 45 40" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M 55 40 Q 61 36 67 40" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
         </g>
+        <!-- FACE (dynamic: eyes + mouth, positioned to NOT overlap the nose) -->
+        <g id="mascot-face"></g>
+        <!-- BIG ROUND NOSE (drawn last so it's the focal point) -->
+        <circle cx="50" cy="54" r="5.5" fill="#FAFAF5" stroke="#11161F" stroke-width="0.6"/>
+        <ellipse cx="48" cy="52" rx="1.6" ry="1.1" fill="#FFFFFF" opacity="0.85"/>
+        <path d="M 46 57.5 Q 50 59.5 54 57.5" stroke="#11161F" stroke-width="0.4" fill="none" opacity="0.4"/>
         <!-- CHEEKS (peachy pink) -->
-        <ellipse cx="32" cy="52" rx="3" ry="2" fill="#FFC2B0" opacity="0.7"/>
-        <ellipse cx="68" cy="52" rx="3" ry="2" fill="#FFC2B0" opacity="0.7"/>
+        <ellipse cx="27" cy="56" rx="3" ry="2" fill="#FFC2B0" opacity="0.6"/>
+        <ellipse cx="73" cy="56" rx="3" ry="2" fill="#FFC2B0" opacity="0.6"/>
         <!-- SPARKLES (happy state only) -->
         <g id="mascot-sparkles" style="display:none;">
           <text x="8" y="18" font-size="14" fill="#FF5910" font-weight="900">✦</text>
@@ -1607,16 +1863,18 @@
     sparkles.style.display = 'none';
 
     if (v >= 67) {
-      // HAPPY: big smile, arms up, sparkles
+      // HAPPY: big smile below nose, squinty eyes flanking the nose, sparkles, arms up
       wrapper.classList.add('happy');
       face.innerHTML = `
-        <!-- Squinty happy eyes -->
-        <path d="M 36 46 Q 40 43 44 46" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        <path d="M 56 46 Q 60 43 64 46" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        <!-- Big open-mouth smile -->
-        <path d="M 35 56 Q 50 72 65 56" stroke="#11161F" stroke-width="2.5" fill="#11161F" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Tongue hint -->
-        <path d="M 44 64 Q 50 68 56 64" fill="#E85A4A"/>
+        <!-- Happy squinty eyes (outside the nose footprint) -->
+        <path d="M 33 48 Q 39 44 45 48" stroke="#11161F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M 55 48 Q 61 44 67 48" stroke="#11161F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <!-- Wide open smile, well below the nose -->
+        <path d="M 33 64 Q 50 78 67 64 Q 50 72 33 64 Z" fill="#11161F" stroke="#11161F" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Tongue -->
+        <path d="M 42 69 Q 50 74 58 69" fill="#E85A4A"/>
+        <!-- Teeth hint -->
+        <path d="M 36 65 L 64 65" stroke="#FAFAF5" stroke-width="1.2" stroke-linecap="round"/>
       `;
       sparkles.style.display = '';
       mood.textContent = v >= 90 ? 'EUPHORIC' : 'READY TO ROLL';
@@ -1626,16 +1884,19 @@
         22, 42, 78, 42
       );
     } else if (v <= 33) {
-      // SAD: frown, droopy arms, tear
+      // SAD: big round eyes with sclera, looking down, frown below nose, tear
       wrapper.classList.add('sad');
       face.innerHTML = `
-        <!-- Dot eyes, droopy -->
-        <ellipse cx="40" cy="47" rx="2.2" ry="2.8" fill="#11161F"/>
-        <ellipse cx="60" cy="47" rx="2.2" ry="2.8" fill="#11161F"/>
-        <!-- Frown -->
-        <path d="M 38 62 Q 50 54 62 62" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <!-- Big round sad eyes with visible sclera -->
+        <ellipse cx="39" cy="48" rx="3.4" ry="3.6" fill="#FAFAF5" stroke="#11161F" stroke-width="0.6"/>
+        <ellipse cx="61" cy="48" rx="3.4" ry="3.6" fill="#FAFAF5" stroke="#11161F" stroke-width="0.6"/>
+        <!-- Pupils looking down -->
+        <ellipse cx="39" cy="50" rx="1.8" ry="2.1" fill="#11161F"/>
+        <ellipse cx="61" cy="50" rx="1.8" ry="2.1" fill="#11161F"/>
+        <!-- Frown below the nose -->
+        <path d="M 40 68 Q 50 62 60 68" stroke="#11161F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
         <!-- Tear -->
-        <path d="M 39 52 Q 38 58 40 58 Q 42 58 41 52 Z" fill="#4FA3E8" opacity="0.9"/>
+        <path d="M 37 54 Q 36 60 38 60 Q 40 60 39 54 Z" fill="#4FA3E8" opacity="0.9"/>
       `;
       mood.textContent = v <= 15 ? 'DEVASTATED' : 'SULKING';
       setMascotArms(
@@ -1644,14 +1905,18 @@
         26, 114, 74, 114
       );
     } else {
-      // NEUTRAL: dot eyes, small smile, arms down
+      // NEUTRAL: round expressive eyes flanking the nose, small content smile below nose
       face.innerHTML = `
-        <ellipse cx="40" cy="46" rx="2.5" ry="3" fill="#11161F"/>
-        <ellipse cx="60" cy="46" rx="2.5" ry="3" fill="#11161F"/>
-        <circle cx="40.8" cy="45" r="0.7" fill="#FAFAF5"/>
-        <circle cx="60.8" cy="45" r="0.7" fill="#FAFAF5"/>
-        <!-- Small content smile -->
-        <path d="M 42 59 Q 50 63 58 59" stroke="#11161F" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Round eyes with whites, clear of the nose -->
+        <ellipse cx="39" cy="47" rx="3.4" ry="3.8" fill="#FAFAF5" stroke="#11161F" stroke-width="0.6"/>
+        <ellipse cx="61" cy="47" rx="3.4" ry="3.8" fill="#FAFAF5" stroke="#11161F" stroke-width="0.6"/>
+        <!-- Pupils with highlights -->
+        <ellipse cx="39" cy="47.5" rx="2" ry="2.4" fill="#11161F"/>
+        <ellipse cx="61" cy="47.5" rx="2" ry="2.4" fill="#11161F"/>
+        <circle cx="39.8" cy="46.5" r="0.7" fill="#FAFAF5"/>
+        <circle cx="61.8" cy="46.5" r="0.7" fill="#FAFAF5"/>
+        <!-- Small content smile below the nose -->
+        <path d="M 42 66 Q 50 70 58 66" stroke="#11161F" stroke-width="2" fill="none" stroke-linecap="round"/>
       `;
       mood.textContent = 'NEUTRAL';
       setMascotArms(
@@ -1853,12 +2118,18 @@
         mets2026.data.actualWins = data.pace;
         mets2026.data.actualDetail = `through ${data.games} games · ${data.wins}-${data.losses}`;
         mets2026.sub = `The Stearns Rebuild · pace ${data.pace}-${162 - data.pace}`;
+        if (data.pace && data.pace > 0) {
+          mets2026.data.costPerWin = Math.round((381 / data.pace) * 100) / 100;
+        }
       }
 
       // If the Mets preset is currently active, refresh the view
       if (STATE.activePresetId === 'mets2026') {
         STATE.actualWins = data.pace;
         STATE.actualDetail = `through ${data.games} games · ${data.wins}-${data.losses}`;
+        if (data.pace && data.pace > 0) {
+          STATE.costPerWin = Math.round((381 / data.pace) * 100) / 100;
+        }
       }
 
       // Update the visible live-data cells
@@ -1896,5 +2167,8 @@
   // then live data overrides if/when the API responds
   fetchLiveData();
 </script>
+<!-- GoatCounter analytics (privacy-friendly, no cookies) -->
+<script data-goatcounter="https://gabep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
