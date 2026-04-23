@@ -74,6 +74,8 @@ The `/intangibles` route is architecturally unusual: a single self-contained sta
 
 Before making any change to `public/intangibles/index.html`, read `docs/intangibles-current-state.md`. That doc is the authoritative reference for color semantics, data shapes, orientation conventions, and known footguns. When a brief and that doc disagree, the doc wins until updated.
 
+The periodic content refresh (Ledger player stats + rotating Mets quotes) is wrapped as a slash command: run `/refresh-TII` to dispatch the v2.1 brief at `docs/specs/intangibles-refresh.md`.
+
 ## Conventions
 
 - Apostrophes inside JSX text must be escaped as `&apos;` (ESLint enforces `react/no-unescaped-entities`).
