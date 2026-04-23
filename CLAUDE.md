@@ -68,6 +68,12 @@ Components in `src/components/<Name>/` ship as a `.tsx` + `.module.css` pair. CS
 
 The contact form, comment, and subscription APIs use Resend. Subscriptions are double-opt-in: `/api/subscribe` sends a confirmation email with an HMAC-signed token from `src/lib/subscription-token.ts`, and `/api/confirm-subscription` validates the token before adding the contact to Resend's audience. `/api/notify-subscribers` is used to fan out new blog post notifications.
 
+### The Intangibles Index mini-app at `/intangibles`
+
+The `/intangibles` route is architecturally unusual: a single self-contained static HTML file at `public/intangibles/index.html` (inline CSS and JS, base64 assets), served via a rewrite in `next.config.ts`. It is not Sanity-driven and does not share components with the marketing pages. The only related dynamic code is `src/app/(site)/api/mets/route.ts`, which proxies the MLB Stats API for live Mets record/streak/pace.
+
+Before making any change to `public/intangibles/index.html`, read `docs/intangibles-current-state.md`. That doc is the authoritative reference for color semantics, data shapes, orientation conventions, and known footguns. When a brief and that doc disagree, the doc wins until updated.
+
 ## Conventions
 
 - Apostrophes inside JSX text must be escaped as `&apos;` (ESLint enforces `react/no-unescaped-entities`).
