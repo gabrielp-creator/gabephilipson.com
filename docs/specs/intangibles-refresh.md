@@ -1,4 +1,4 @@
-# Claude Code Brief: Intangibles Index Content Refresh (On-Demand) — v2.1
+# Claude Code Brief: Intangibles Index Content Refresh (On-Demand) — v2.2
 
 Run this brief any time Gabriel wants to refresh the Intangibles Ledger player data and rotating Mets quotes on the Intangibles Index page. Expected cadence: every few days early in the season, less frequently later in the season.
 
@@ -10,6 +10,7 @@ Target file: `public/intangibles/index.html`.
 - v1: original refresh brief
 - v2: corrected QUOTES schema reading, quote count target, dateline format, fWAR drift controls, anti-hallucination discipline, diff-scope check
 - v2.1: aligned Step 2 and Step 4 event thresholds, tightened "public statement" trigger, specified iconic-quote flagging location, added URL comment grep check, added current commentary to Step 1 report
+- v2.2: Step 2 now requires direct WebFetch of canonical player pages (ESPN/FanGraphs/B-Ref) for stat totals and forbids quoting stats from WebSearch result snippets — caught after the 2026-04-25 refresh shipped a stale Alonso HR count and several other small drifts
 
 ---
 
@@ -47,9 +48,15 @@ Wait for confirmation before fetching new data.
 
 ## Step 2: Fetch Updated Player Data
 
-**Primary source: web search.** Use FanGraphs, Baseball Reference, MLB.com, or ESPN. A single current-season player page gives a full stat line in one fetch. This is more reliable for multi-player updates than multi-call joining against the MLB Stats API.
+**For stat totals: WebFetch a canonical player page directly.** Acceptable canonical sources: ESPN, FanGraphs, Baseball Reference, MLB.com. ESPN URLs follow `https://www.espn.com/mlb/player/_/id/{ID}/{slug}` and render the season totals server-side reliably; FanGraphs and B-Ref are also reliable. MLB.com player pages are SPA-heavy and sometimes return 406 — fall back to ESPN/FanGraphs when that happens.
 
-**Secondary source: MLB Stats API.** Use only if web search fails for a specific player or if a given page is paywalled.
+**For Statcast metrics** (xwOBA, barrel%, hard-hit%, exit velocity): WebFetch Baseball Savant directly rather than quoting them from a search snippet.
+
+**WebSearch is for narrative events, not for stat totals.** Use WebSearch to find time-stamped events (trades, IL placements, viral moments, public statements, quotes) — anything anchored to a specific day. Do not quote stat lines from WebSearch result snippets, even when the snippet appears to be from one of the canonical domains. Aggregator blogs frequently quote 2-3-day-stale numbers, conflate different "through N games" anchors, or pull from older recap articles that the reporter never updated.
+
+**Cross-check before committing.** Verify the slash line, HR, RBI, and games played all line up across at least two of the four canonical sources. If they disagree, ESPN's main player page is the tiebreaker (typically updated on game-end). Keep a verified-stats scratch table in the conversation while drafting the Ledger so each line traces to a fetched URL, not to a snippet.
+
+**Secondary source: MLB Stats API.** Use only if WebFetch on the canonical pages fails for a specific player or if a given page is paywalled.
 
 **For each player, collect:**
 - Current team
@@ -208,18 +215,19 @@ Before committing:
 
 1. The Intangibles Ledger dateline shows today's date in title case, format `Month D, YYYY`.
 2. Every player in the Ledger has either updated stats or a fresh vibe line.
-3. fWAR impact values only changed for players with a named triggering event since last refresh. Event documented for each change.
-4. TOTAL A DRAINED equals the sum of Given Away chips. Verified by re-grep of the file.
-5. TOTAL B ADDED equals the sum of Acquired chips. Verified by re-grep of the file.
-6. NET TRADE DIFFERENTIAL equals (Total B Added) minus (Total A Drained). Verified by re-grep of the file.
-7. Ledger commentary paragraph references current game count and narrative.
-8. Game count in commentary is consistent with game count implied by the dateline.
-9. QUOTES array contains between 10 and 20 entries.
-10. Every new quote has been verified against a real source URL. No URL comments remain in the committed file. Run `grep -n "// http" public/intangibles/index.html` as a structural check. Any hits must be removed before commit.
-11. No invented or paraphrased quotes. Every attribution traceable.
-12. No em dashes, en dashes, or emojis introduced.
-13. Page loads without console errors.
-14. Quote rotation works (click Next, cycles through all entries).
+3. Every stat figure in the Ledger traces to a direct WebFetch of a canonical source (ESPN, FanGraphs, Baseball Reference, MLB.com, or Baseball Savant for Statcast metrics). No stat figure was lifted from a WebSearch result snippet.
+4. fWAR impact values only changed for players with a named triggering event since last refresh. Event documented for each change.
+5. TOTAL A DRAINED equals the sum of Given Away chips. Verified by re-grep of the file.
+6. TOTAL B ADDED equals the sum of Acquired chips. Verified by re-grep of the file.
+7. NET TRADE DIFFERENTIAL equals (Total B Added) minus (Total A Drained). Verified by re-grep of the file.
+8. Ledger commentary paragraph references current game count and narrative.
+9. Game count in commentary is consistent with game count implied by the dateline.
+10. QUOTES array contains between 10 and 20 entries.
+11. Every new quote has been verified against a real source URL. No URL comments remain in the committed file. Run `grep -n "// http" public/intangibles/index.html` as a structural check. Any hits must be removed before commit.
+12. No invented or paraphrased quotes. Every attribution traceable.
+13. No em dashes, en dashes, or emojis introduced.
+14. Page loads without console errors.
+15. Quote rotation works (click Next, cycles through all entries).
 
 ### Diff-Scope Check (Mandatory Before Commit)
 

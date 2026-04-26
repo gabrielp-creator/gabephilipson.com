@@ -9,15 +9,21 @@ This project uses Next.js 16, which has breaking changes from earlier versions �
 ## Commands
 
 - `npm run dev` — local dev server
-- `npm run build` — production build (also runs TypeScript check)
+- `npm run build` — production build; this is also the only TypeScript check (no separate `tsc` script)
 - `npm start` — serve the production build
 - `npm run lint` — ESLint
+
+No test framework is configured. `npm run build` is the verification step before deploy.
+
+Vercel deploys automatically on push to `main`.
 
 Sanity update scripts are run via Node's env-file flag so the `SANITY_TOKEN` is loaded:
 
 ```
 node --env-file=.env.local scripts/<name>.mjs
 ```
+
+Most `scripts/*.mjs` files are one-off Sanity updates following the pattern below. Two exceptions use Puppeteer and are not part of the Sanity flow: `scripts/gen-og-image.mjs` (renders the Intangibles Index OG image) and `scripts/screenshot-cdt.mjs` (captures CDT thumbnails). They're standalone — copying their structure for new Sanity scripts will pull in Puppeteer for no reason.
 
 ## High-level architecture
 
@@ -74,7 +80,7 @@ The `/intangibles` route is architecturally unusual: a single self-contained sta
 
 Before making any change to `public/intangibles/index.html`, read `docs/intangibles-current-state.md`. That doc is the authoritative reference for color semantics, data shapes, orientation conventions, and known footguns. When a brief and that doc disagree, the doc wins until updated.
 
-The periodic content refresh (Ledger player stats + rotating Mets quotes) is wrapped as a slash command: run `/refresh-TII` to dispatch the v2.1 brief at `docs/specs/intangibles-refresh.md`.
+The periodic content refresh (Ledger player stats + rotating Mets quotes) is wrapped as a slash command: run `/refresh-TII` to dispatch the v2.2 brief at `docs/specs/intangibles-refresh.md`. Step 2 of that brief requires direct `WebFetch` of canonical player pages (ESPN/FanGraphs/B-Ref) for stat totals — do not quote stats from `WebSearch` result snippets, even when the snippet appears to come from a canonical domain. WebSearch is for narrative events (trades, IL, quotes); stat figures must trace to a fetched URL.
 
 ## Conventions
 
