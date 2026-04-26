@@ -4,8 +4,8 @@ This doc captures the current state of `public/intangibles/index.html` as the au
 
 **Update this doc whenever a significant change lands.** Treat it as a living spec, not a historical record.
 
-**Last updated:** April 23, 2026
-**Last significant change:** Efficiency spectrum gradient retargeted to Mets blue on efficient end (commit `dac7730`)
+**Last updated:** April 25, 2026
+**Last significant change:** Content refresh — Ledger lines updated (no fWAR moves), commentary rewritten for Lindor IL + skid-snap, QUOTES rotated 21→18
 
 ---
 
