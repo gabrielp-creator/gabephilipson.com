@@ -4,8 +4,8 @@ This doc captures the current state of `public/intangibles/index.html` as the au
 
 **Update this doc whenever a significant change lands.** Treat it as a living spec, not a historical record.
 
-**Last updated:** April 25, 2026
-**Last significant change:** Content refresh — Ledger lines updated (no fWAR moves), commentary rewritten for Lindor IL + skid-snap, QUOTES rotated 21→18
+**Last updated:** May 2, 2026
+**Last significant change:** Content refresh — Robert Jr. fWAR moved +0.4→+0.1 (disc herniation IL trigger), totals recalc'd to net −1.8, commentary rewritten for Stearns May 1 manager-defense moment, QUOTES rotated 18→19
 
 ---
 
@@ -121,7 +121,7 @@ Why this matters:
 
 ### QUOTES Array
 
-Array of objects for the rotating pull-quote section. **Currently 18 entries.** Target range on refresh: **10 to 20 entries.** Rotated on Next button click.
+Array of objects for the rotating pull-quote section. **Currently 19 entries.** Target range on refresh: **10 to 20 entries.** Rotated on Next button click.
 
 **Required fields per entry:**
 
